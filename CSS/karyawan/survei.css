@@ -266,6 +266,15 @@ html {
     margin-bottom: 24px;
 }
 
+.inner-content-btn {
+    background-color: #ffffff;
+    min-height: auto !important;
+    padding: 20px 24px;
+    border-radius: 12px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+    margin-bottom: 24px;
+}
+
 .radio-2,
 .hse, .glider-1 {
     padding: 15px;
