@@ -1,0 +1,242 @@
+/* Reset dasar */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Montserrat', sans-serif;
+}
+
+/* Background */
+body {
+    background-image: url(../property/bg\ branding.svg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+/* Kotak Form Putih */
+.form-container {
+    background: #ffffff;
+    width: 100%;
+    max-width: 420px;
+    padding: 40px;
+    border-radius: 6px;
+    box-shadow: 0 15px 35px rgba(0, 10, 30, 0.3);
+    position: relative;
+}
+
+/* Tombol Close (X) di pojok kanan atas */
+.close-btn {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    font-size: 22px;
+    color: #004bb7;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.close {
+    text-decoration: none;
+}
+
+/* Judul Form */
+.form-title {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+    text-align: center;
+    font-size: 26px;
+    margin-bottom: 35px;
+    color: #002855;
+    letter-spacing: 0.5px;
+}
+
+.form-title span {
+    color: #004bb7;
+}
+
+/* Grup Input */
+.input-group {
+    position: relative;
+    margin-bottom: 25px;
+    display: flex;
+    align-items: center;
+}
+
+/* Titik kecil di samping kiri input */
+.dot {
+    font-size: 12px;
+    color: #004bb7;
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+/* Gaya Input & Dropdown */
+.input-group input,
+.input-group select {
+    width: 100%;
+    padding: 10px 10px 10px 22px;
+    border: none;
+    border-bottom: 2px solid #004bb7;
+    outline: none;
+    font-size: 14px;
+    color: #222222;
+    background: transparent;
+    border-radius: 0;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+}
+
+.input-group input::placeholder {
+    color: #666666;
+}
+
+/* Gaya placeholder dropdown */
+.input-group select:invalid {
+    color: #666666;
+}
+
+.input-group select option {
+    background-color: #ffffff;
+    color: #222222;
+}
+
+.input-group input:focus,
+.input-group select:focus {
+    border-bottom-color: #00112c;
+}
+
+/* Panah Dropdown */
+.arrow-icon {
+    position: absolute;
+    right: 5px;
+    font-size: 10px;
+    color: #002855;
+    pointer-events: none;
+}
+
+/* Ikon Mata Password */
+.eye-icon {
+    position: absolute;
+    right: 5px;
+    color: #002855;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+/* Checkbox */
+.checkbox-group {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    margin-top: 25px;
+    margin-bottom: 30px;
+}
+
+.checkbox-group input {
+    margin-top: 3px;
+    cursor: pointer;
+    accent-color: #002855;
+}
+
+.checkbox-group label {
+    font-size: 9px;
+    color: #666666;
+    line-height: 1.4;
+}
+
+/* Tombol Submit */
+.submit-btn {
+    width: 100%;
+    padding: 15px;
+    background-color: #004bb7;
+    border: none;
+    color: #ffffff;
+    font-size: 13px;
+    font-weight: 600;
+    letter-spacing: 2px;
+    cursor: pointer;
+    border-radius: 2px;
+    transition: background 0.3s ease;
+}
+
+.submit-btn:hover {
+    background-color: #002855;
+}
+
+/* Teks Footer */
+.footer-text {
+    text-align: center;
+    margin-top: 20px;
+    font-size: 11px;
+    color: #555555;
+}
+
+.footer-text a {
+    color: #004bb7;
+    text-decoration: none;
+    font-weight: 700;
+}
+
+.footer-text a:hover {
+    text-decoration: underline;
+}
+
+/*MEDIA QUERIES (RESPONSIF SIZES)*/
+
+@media (max-width: 480px) {
+    .form-container {
+        padding: 30px 20px;
+    }
+
+    .close-btn {
+        top: 15px;
+        right: 15px;
+        font-size: 20px;
+    }
+
+    .form-title {
+        font-size: 21px;
+        margin-bottom: 25px;
+    }
+
+    .input-group {
+        margin-bottom: 20px;
+    }
+
+    .input-group input,
+    .input-group select {
+        font-size: 16px;
+        padding: 8px 8px 8px 20px;
+    }
+
+    .checkbox-group {
+        margin-top: 20px;
+        margin-bottom: 20px;
+    }
+
+    .checkbox-group label {
+        font-size: 10px;
+    }
+
+    .submit-btn {
+        padding: 12px;
+        font-size: 12px;
+    }
+}
+
+@media (max-height: 650px) {
+    body {
+        align-items: flex-start;
+        padding-top: 30px;
+        padding-bottom: 30px;
+    }
+}
