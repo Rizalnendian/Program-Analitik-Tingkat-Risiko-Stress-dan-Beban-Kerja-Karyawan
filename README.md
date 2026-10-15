@@ -63,8 +63,6 @@ Program-Analitik-Tingkat-Risiko-Stress-dan-Beban-Kerja-Karyawan/
 │   └── signup.css
 ├── Diagram.vsdx
 ├── html/
-│   ├── index.html
-│   ├── signup.html
 │   ├── karyawan/
 │   │   ├── dashboard_karyawan.html
 │   │   ├── profile.html
@@ -75,8 +73,9 @@ Program-Analitik-Tingkat-Risiko-Stress-dan-Beban-Kerja-Karyawan/
 │       └── profile.html
 ├── JavaScript/
 │   └── tanggal.js
+├── index.html
+├── signup.html
 ├── LOGO.cdr
-├── Backup_of_LOGO.cdr
 ├── .prettierrc
 └── README.md
 ```
@@ -133,7 +132,8 @@ Tidak ada lisensi yang ditentukan dalam repositori ini.
 
 ## Tentang Pengembang 👨‍💻
 
-*   **Nama:** Rizalnendian
+*   **Frontend:** Rizalnendian
+*   **Backend:** Firdaus
 *   **URL Repositori:** [https://github.com/Rizalnendian/Program-Analitik-Tingkat-Risiko-Stress-dan-Beban-Kerja-Karyawan](https://github.com/Rizalnendian/Program-Analitik-Tingkat-Risiko-Stress-dan-Beban-Kerja-Karyawan)
 
 ## Footer 🛠️
@@ -144,7 +144,7 @@ Tidak ada lisensi yang ditentukan dalam repositori ini.
 
 --- ✨
 
-**Jangan lupa untuk memberikan bintang ⭐, melakukan fork 🍴, dan melaporkan isu ❗ jika Anda menemukan masalah!**
+
 
 ---
 
