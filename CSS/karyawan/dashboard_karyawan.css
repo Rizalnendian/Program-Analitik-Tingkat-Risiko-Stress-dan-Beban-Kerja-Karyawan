@@ -276,6 +276,7 @@ html {
 }
 
 /* Setting responsive */
+
 @media (max-width: 768px) {
     .top-bar {
         padding: 0 15px;

@@ -703,6 +703,15 @@ html {
 }
 
 /* Responsif untuk Layar Kecil / HP */
+
+/* Responsif Mobile & Tablet */
+
+/* Setting responsive */
+
+/* ==========================================
+   TAMBAHAN RESPONSIF MOBILE EKSTRA KECIL (DASHBOARD)
+   ========================================== */
+
 @media (max-width: 992px) {
     .analytics-grid-2 {
         grid-template-columns: 1fr;
@@ -714,16 +723,11 @@ html {
     .breakdown-score {
         text-align: left;
     }
-}
-
-/* Responsif Mobile & Tablet */
-@media (max-width: 992px) {
     .analytics-grid-3 {
         grid-template-columns: 1fr;
     }
 }
 
-/* Setting responsive */
 @media (max-width: 768px) {
     .top-bar {
         padding: 0 15px;
@@ -735,7 +739,7 @@ html {
     }
 
     .content-container {
-        padding: 15px;
+        padding: 15px !important;
     }
 
     .top-bar h2 {
@@ -744,40 +748,6 @@ html {
 
     .sidebar-close-btn {
         display: block;
-    }
-}
-
-@media (max-width: 480px) {
-    .topbar {
-        padding: 0px 12px;
-        height: 56px;
-        gap: 8px;
-    }
-
-    .topbar-left {
-        gap: 8px;
-    }
-
-    .topbar-left h2 {
-        font-size: 0.75rem;
-    }
-
-    .topbar-time {
-        font-size: 0.75rem;
-    }
-
-    .mobile-toggle-btn {
-        font-size: 20px;
-    }
-}
-
-/* ==========================================
-   TAMBAHAN RESPONSIF MOBILE EKSTRA KECIL (DASHBOARD)
-   ========================================== */
-
-@media (max-width: 768px) {
-    .content-container {
-        padding: 15px !important;
     }
 
     .stat-card {
@@ -810,6 +780,27 @@ html {
 }
 
 @media (max-width: 480px) {
+    .topbar {
+        padding: 0px 12px;
+        height: 56px;
+        gap: 8px;
+    }
+
+    .topbar-left {
+        gap: 8px;
+    }
+
+    .topbar-left h2 {
+        font-size: 0.75rem;
+    }
+
+    .topbar-time {
+        font-size: 0.75rem;
+    }
+
+    .mobile-toggle-btn {
+        font-size: 20px;
+    }
     .content-container {
         padding: 10px !important;
     }

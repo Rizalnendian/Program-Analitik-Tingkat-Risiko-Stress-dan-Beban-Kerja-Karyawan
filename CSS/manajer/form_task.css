@@ -296,6 +296,11 @@ html {
 }
 
 /* Setting responsive */
+
+/* ==========================================
+   TAMBAHAN RESPONSIF MOBILE (FORM TASK)
+   ========================================== */
+
 @media (max-width: 768px) {
     .top-bar {
         padding: 0 15px;
@@ -316,6 +321,20 @@ html {
 
     .sidebar-close-btn {
         display: block;
+    }
+    .task-form {
+        padding: 16px !important;
+    }
+
+    /* Memaksa elemen form col-6 menjadi 100% ke bawah agar tidak gepeng di HP */
+    .task-form .col-6,
+    .task-form .form-group.col-6 {
+        flex: 0 0 100% !important;
+        width: 100% !important;
+    }
+
+    .task-form .mb-5 {
+        margin-bottom: 1.5rem !important; /* Menyesuaikan jarak spasi agar tidak terlalu renggang di mobile */
     }
 }
 
@@ -341,30 +360,6 @@ html {
     .mobile-toggle-btn {
         font-size: 20px;
     }
-}
-
-/* ==========================================
-   TAMBAHAN RESPONSIF MOBILE (FORM TASK)
-   ========================================== */
-
-@media (max-width: 768px) {
-    .task-form {
-        padding: 16px !important;
-    }
-
-    /* Memaksa elemen form col-6 menjadi 100% ke bawah agar tidak gepeng di HP */
-    .task-form .col-6,
-    .task-form .form-group.col-6 {
-        flex: 0 0 100% !important;
-        width: 100% !important;
-    }
-
-    .task-form .mb-5 {
-        margin-bottom: 1.5rem !important; /* Menyesuaikan jarak spasi agar tidak terlalu renggang di mobile */
-    }
-}
-
-@media (max-width: 480px) {
     .content-container {
         padding: 12px !important;
     }
