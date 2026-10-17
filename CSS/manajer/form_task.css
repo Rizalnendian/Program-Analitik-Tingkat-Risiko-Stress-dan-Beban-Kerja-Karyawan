@@ -20,6 +20,10 @@ html {
 
 /* Navbar samping */
 .sidebar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100vh;
     width: 250px;
     flex-shrink: 0;
     background-color: #002855;
@@ -28,6 +32,7 @@ html {
     z-index: 1000;
     display: flex;
     flex-direction: column;
+    transform: translateX(-100%);
 }
 
 .sidebar-logo {
@@ -67,7 +72,7 @@ html {
 
 /* Tombol tutup di mobile*/
 .sidebar-close-btn {
-    display: none;
+    display: block;
     border: none;
     background: none;
     color: #ffffff;
@@ -75,7 +80,10 @@ html {
     margin-left: auto;
     cursor: pointer;
 }
-
+/* Tombol buka di mobile*/
+.sidebar.open {
+    transform: translateX(0);
+}
 .sidebar-user {
     padding: 16px 20px;
     background: rgba(255, 255, 255, 0.04);
@@ -224,7 +232,7 @@ html {
 
 /* Hide tombol menu hamburger di layar PC/Laptop */
 .mobile-toggle-btn {
-    display: none;
+    display: block;
     background: none;
     border: none;
     font-size: 24px;
@@ -289,23 +297,6 @@ html {
 
 /* Setting responsive */
 @media (max-width: 768px) {
-    /* Overlay side navbar */
-    .sidebar {
-        position: absolute;
-        height: 100%;
-        transform: translateX(-100%);
-    }
-
-    /* Memunculkan navbar saat mengklik tombol hamburger di mobile */
-    .sidebar.open {
-        transform: translateX(0);
-    }
-
-    /* Munculkan tombol menu */
-    .mobile-toggle-btn {
-        display: block;
-    }
-
     .top-bar {
         padding: 0 15px;
         gap: 10px;
