@@ -795,7 +795,7 @@ html {
     }
 
     .matrix-table th {
-        font-size: 6px !important; /* Ukuran bisa disesuaikan, misal 8px atau 9px */
+        font-size: 8.5px !important; /* Ukuran bisa disesuaikan, misal 8px atau 9px */
         line-height: 1.15;
         padding: 2px 1px;
     }
