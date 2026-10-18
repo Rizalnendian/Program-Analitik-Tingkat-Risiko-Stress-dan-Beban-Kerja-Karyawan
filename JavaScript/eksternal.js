@@ -54,3 +54,41 @@ function mulaiJamRealtime(waktuAwal) {
 
 // Panggil fungsi API saat halaman selesai dimuat
 window.onload = dapatkanWaktuAPI;
+
+const sidebar = document.getElementById('sidebar');
+const sidebarToggleBtn = document.getElementById('sidebarToggleBtn');
+const sidebarCloseBtn = document.getElementById('sidebarCloseBtn');
+const sidebarOverlay = document.getElementById('sidebarOverlay');
+
+function openSidebar() {
+    sidebar.classList.add('open');
+    sidebarOverlay.classList.add('active');
+}
+
+function closeSidebar() {
+    sidebar.classList.remove('open');
+    sidebarOverlay.classList.remove('active');
+}
+
+sidebarToggleBtn.addEventListener('click', openSidebar);
+sidebarCloseBtn.addEventListener('click', closeSidebar);
+sidebarOverlay.addEventListener('click', closeSidebar);
+
+type = 'module';
+src =
+    'https://cdn.jsdelivr.net/npm/bootstrap@6.0.0-alpha.1/dist/js/bootstrap.bundle.min.js';
+integrity =
+    'sha384-1a/pXj49ZQ1aHEmrJ+gMw1otqoVsYwlEnlD8mIfY2TV03r20Y0CN7uqx1tQogjPL';
+crossorigin = 'anonymous';
+
+const sliderWrappers = document.querySelectorAll('.slider-wrapper');
+sliderWrappers.forEach((wrapper) => {
+    const rangeInput = wrapper.querySelector('input[type="range"]');
+    const rangeValue = wrapper.querySelector('.slider-value');
+
+    if (rangeInput && rangeValue) {
+        rangeInput.addEventListener('input', (e) => {
+            rangeValue.textContent = e.target.value;
+        });
+    }
+});
