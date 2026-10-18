@@ -69,76 +69,16 @@ body {
 }
 
 /* Grup Input */
-.input-group {
-    position: relative;
-    margin-bottom: 25px;
-    display: flex;
-    align-items: center;
-}
 
 /* Titik kecil di samping kiri input */
-.dot {
-    font-size: 12px;
-    color: #004bb7;
-    position: absolute;
-    left: 0;
-    top: 50%;
-    transform: translateY(-50%);
-}
 
 /* Gaya Input & Dropdown */
-.input-group input,
-.input-group select {
-    width: 100%;
-    padding: 10px 10px 10px 22px;
-    border: none;
-    border-bottom: 2px solid #004bb7;
-    outline: none;
-    font-size: 14px;
-    color: #222222;
-    background: transparent;
-    border-radius: 0;
-    -webkit-appearance: none;
-    -moz-appearance: none;
-    appearance: none;
-}
-
-.input-group input::placeholder {
-    color: #666666;
-}
 
 /* Gaya placeholder dropdown */
-.input-group select:invalid {
-    color: #666666;
-}
-
-.input-group select option {
-    background-color: #ffffff;
-    color: #222222;
-}
-
-.input-group input:focus,
-.input-group select:focus {
-    border-bottom-color: #00112c;
-}
 
 /* Panah Dropdown */
-.arrow-icon {
-    position: absolute;
-    right: 5px;
-    font-size: 10px;
-    color: #002855;
-    pointer-events: none;
-}
 
 /* Ikon Mata Password */
-.eye-icon {
-    position: absolute;
-    right: 5px;
-    color: #002855;
-    cursor: pointer;
-    font-size: 14px;
-}
 
 /* Checkbox */
 .checkbox-group {
@@ -214,16 +154,6 @@ body {
     .form-title {
         font-size: 21px;
         margin-bottom: 25px;
-    }
-
-    .input-group {
-        margin-bottom: 20px;
-    }
-
-    .input-group input,
-    .input-group select {
-        font-size: 16px;
-        padding: 8px 8px 8px 20px;
     }
 
     .checkbox-group {

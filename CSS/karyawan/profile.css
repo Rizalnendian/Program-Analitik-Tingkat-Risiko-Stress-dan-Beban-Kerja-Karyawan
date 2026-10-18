@@ -391,11 +391,6 @@ html {
 }
 
 @media (max-width: 480px) {
-    .topbar {
-        padding: 0px 12px;
-        height: 56px;
-        gap: 8px;
-    }
 
     .topbar-left {
         gap: 8px;

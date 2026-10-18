@@ -290,35 +290,9 @@ html {
     align-items: left;
 }
 
-.overview {
-    background-color: #e0e0e0;
-    padding: 10px;
-    border-radius: 15px;
-}
-
 /* Styling Tombol Filter / Pill */
-.btn-filter {
-    background-color: #ffffff;
-    border: 1px solid #dee2e6;
-    color: #495057;
-    transition: all 0.2s ease;
-}
-.btn-filter:hover {
-    background-color: #f8f9fa;
-    border-color: #ced4da;
-}
-.btn-filter.active,
-.btn-filter:active {
-    background-color: #002855 !important; /* Warna hijau gelap khas dashboard profesional */
-    color: #ffffff !important;
-    border-color: #002855 !important;
-}
 
 /* Kotak Informasi Khusus */
-.alert-info-custom {
-    background-color: #f1f8f6;
-    border: 1px solid #d4ede4;
-}
 
 /* 1. Layout & Filter Bar */
 .analytics-filter-bar {
@@ -780,11 +754,6 @@ html {
 }
 
 @media (max-width: 480px) {
-    .topbar {
-        padding: 0px 12px;
-        height: 56px;
-        gap: 8px;
-    }
 
     .topbar-left {
         gap: 8px;
