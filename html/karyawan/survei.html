@@ -178,7 +178,10 @@
                                 perusahaan memahami kondisi kerja dan beban
                                 kerja karyawan.
                             </p>
-                            <div class="form-group" style="margin-bottom: 30px">
+                            <div
+                                class="form-group slider-1"
+                                style="margin-bottom: 30px"
+                            >
                                 <label for="rangeBubble" class="form-label"
                                     >Seberapa besar aktivitas mental dan
                                     persepsi (misalnya berpikir, mengambil
@@ -186,6 +189,7 @@
                                     mencari) yang dibutuhkan pekerjaan
                                     Anda?</label
                                 >
+
                                 <div class="slider-wrapper">
                                     <div class="slider-top">
                                         <span
@@ -199,7 +203,6 @@
                                         min="0"
                                         max="100"
                                         value="50"
-                                        list="rangeTicksList"
                                         id="myRange"
                                     />
                                     <div class="slider-bottom">
@@ -210,7 +213,10 @@
                                 </div>
                             </div>
 
-                            <div class="form-group" style="margin-bottom: 30px">
+                            <div
+                                class="form-group slider-1"
+                                style="margin-bottom: 30px"
+                            >
                                 <label for="rangeBubble" class="form-label"
                                     >Seberapa besar aktivitas fisik (misalnya
                                     mendorong, menarik, menggerakkan,
@@ -241,7 +247,10 @@
                                 </div>
                             </div>
 
-                            <div class="form-group" style="margin-bottom: 20px">
+                            <div
+                                class="form-group slider-1"
+                                style="margin-bottom: 20px"
+                            >
                                 <label for="rangeBubble" class="form-label"
                                     >Seberapa besar tekanan waktu yang Anda
                                     rasakan terhadap laju atau kecepatan
@@ -261,7 +270,6 @@
                                         min="0"
                                         max="100"
                                         value="50"
-                                        list="rangeTicksList"
                                         id="myRange"
                                     />
                                     <div class="slider-bottom">
@@ -272,7 +280,10 @@
                                 </div>
                             </div>
 
-                            <div class="form-group" style="margin-bottom: 30px">
+                            <div
+                                class="form-group slider-1"
+                                style="margin-bottom: 30px"
+                            >
                                 <label for="rangeBubble" class="form-label"
                                     >Seberapa berhasil Anda mencapai tujuan
                                     pekerjaan Anda? Seberapa puas Anda dengan
@@ -302,7 +313,10 @@
                                 </div>
                             </div>
 
-                            <div class="form-group" style="margin-bottom: 30px">
+                            <div
+                                class="form-group slider-1"
+                                style="margin-bottom: 30px"
+                            >
                                 <label for="rangeBubble" class="form-label"
                                     >Seberapa keras Anda harus bekerja (secara
                                     mental dan fisik) untuk mencapai tingkat
@@ -332,7 +346,10 @@
                                 </div>
                             </div>
 
-                            <div class="form-group" style="margin-bottom: 30px">
+                            <div
+                                class="form-group slider-1"
+                                style="margin-bottom: 30px"
+                            >
                                 <label for="rangeBubble" class="form-label"
                                     >Seberapa besar Anda merasa tidak aman,
                                     putus asa, tersinggung, stres, dan
@@ -3831,12 +3848,16 @@
                 'sha384-1a/pXj49ZQ1aHEmrJ+gMw1otqoVsYwlEnlD8mIfY2TV03r20Y0CN7uqx1tQogjPL';
             crossorigin = 'anonymous';
 
-            const rangeInput = document.getElementById('myRange');
-            const rangeValue = document.getElementById('rangeValue');
+            const sliderWrappers = document.querySelectorAll('.slider-wrapper');
+            sliderWrappers.forEach((wrapper) => {
+                const rangeInput = wrapper.querySelector('input[type="range"]');
+                const rangeValue = wrapper.querySelector('.slider-value');
 
-            // Fungsi untuk memperbarui angka secara real-time saat slider digeser
-            rangeInput.addEventListener('input', (e) => {
-                rangeValue.textContent = e.target.value;
+                if (rangeInput && rangeValue) {
+                    rangeInput.addEventListener('input', (e) => {
+                        rangeValue.textContent = e.target.value;
+                    });
+                }
             });
         </script>
         <script src="../../JavaScript/tanggal.js" defer></script>

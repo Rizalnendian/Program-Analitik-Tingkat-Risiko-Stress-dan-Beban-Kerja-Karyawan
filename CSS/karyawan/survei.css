@@ -286,7 +286,7 @@ html {
 
 .radio-2,
 .hse,
-.glider-1 {
+.slider-1 {
     padding: 15px;
     column-gap: 15px;
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
@@ -315,13 +315,11 @@ html {
 
 .slider-wrapper {
     width: 100%;
-    padding: 20px;
     border-radius: 8px;
 }
 .slider-top {
     display: flex;
     justify-content: flex-end;
-    margin-bottom: 8px;
 }
 .slider-value {
     color: #004bb7;
@@ -361,7 +359,6 @@ input[type='range']::-webkit-slider-thumb {
     justify-content: space-between;
     font-size: 13px;
     color: #8a9990;
-    margin-top: 8px;
 }
 
 /* Setting responsive */
