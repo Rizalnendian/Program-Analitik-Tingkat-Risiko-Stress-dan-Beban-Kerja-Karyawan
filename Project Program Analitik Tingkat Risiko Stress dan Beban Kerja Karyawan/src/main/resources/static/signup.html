@@ -1,0 +1,142 @@
+<!doctype html>
+<html lang="id">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Registration Form</title>
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400..900;1,6..96,400..900&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
+            rel="stylesheet"
+        />
+        <link
+            href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+            rel="stylesheet"
+        />
+        <link rel="icon" type="image/svg+xml" href="LOGO warna.svg" />
+        <link rel="stylesheet" href="CSS/signup.css" />
+    </head>
+    <body>
+        <div class="form-container">
+            <div class="form-header">
+                <!-- Judul Form -->
+                <h4 class="form-title">
+                    <span>•</span> Registration Form <span>•</span>
+                </h4>
+
+                <!-- Tombol Close (X) -->
+                <a class="close-btn" href="index.html">&times;</a>
+            </div>
+
+            <form action="#">
+                <!-- Input Nama -->
+                <div class="form-floating" style="margin-bottom: 10px">
+                    <input
+                        type="text"
+                        class="form-control"
+                        id="floatingName"
+                        placeholder="Email"
+                    />
+
+                    <label for="floatingName">Nama lengkap</label>
+                </div>
+
+                <!-- Input Email -->
+                <div class="form-floating" style="margin-bottom: 10px">
+                    <input
+                        type="email"
+                        class="form-control"
+                        id="floatingEmail"
+                        placeholder="Email"
+                    />
+
+                    <label for="floatingEmail">Email</label>
+                </div>
+
+                <!-- Dropdown Role -->
+                <div class="form-floating" style="margin-bottom: 10px">
+                    <select
+                        class="form-select"
+                        id="floatingRole"
+                        aria-label="Floating label select example"
+                    >
+                        <option selected>Pilih posisi</option>
+                        <option value="Manajer">Manajer</option>
+                        <option value="Staff">Staf</option>
+                    </select>
+                    <label for="floatingSelect">Role</label>
+                </div>
+
+                <!-- Input Jenis kelamin -->
+                <div class="form-floating" style="margin-bottom: 10px">
+                    <select
+                        class="form-select"
+                        id="floatingGender"
+                        aria-label="Floating label select example"
+                    >
+                        <option selected>Pilih jenis kelamin</option>
+                        <option value="Laki-laki">Laki-laki</option>
+                        <option value="Perempuan">Perempuan</option>
+                    </select>
+                    <label for="floatingSelect">Jenis kelamin</label>
+                </div>
+
+                <!-- Input Divisi -->
+                <div class="form-floating" style="margin-bottom: 10px">
+                    <select
+                        class="form-select"
+                        id="floatingDepartment"
+                        aria-label="Floating label select example"
+                    >
+                        <option selected>Pilih divisi kerja</option>
+                        <option value="Finance">Finance</option>
+                        <option value="HR">HR</option>
+                        <option value="IT">IT</option>
+                        <option value="Marketing">Marketing</option>
+                        <option value="Operasional">Operasional</option>
+                    </select>
+                    <label for="floatingSelect">Divisi</label>
+                </div>
+
+                <!-- Input Password -->
+                <div class="form-floating" style="margin-bottom: 10px">
+                    <input
+                        type="password"
+                        class="form-control"
+                        id="floatingPassword"
+                        placeholder="Password"
+                    />
+                    <label for="floatingPassword">Password</label>
+                </div>
+
+                <!-- Checkbox Persyaratan -->
+                <div class="checkbox-group">
+                    <input type="checkbox" id="terms" required />
+                    <label for="terms"
+                        >Ceklis jika data yang diinput sudah benar dan tidak ada
+                        kesalahan penulisan maupun data.
+                    </label>
+                </div>
+
+                <!-- Tombol Submit -->
+                <button type="submit" class="submit-btn py-2">
+                    CREATE ACCOUNT
+                </button>
+
+                <!-- Link Login -->
+                <p class="footer-text">
+                    Already have an account?
+                    <a href="index.html">Sign in</a>
+                </p>
+            </form>
+        </div>
+        <script
+            type="module"
+            src="https://cdn.jsdelivr.net/npm/bootstrap@6.0.0-alpha.1/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-1a/pXj49ZQ1aHEmrJ+gMw1otqoVsYwlEnlD8mIfY2TV03r20Y0CN7uqx1tQogjPL"
+            crossorigin="anonymous"
+        ></script>
+    <script src="JavaScript/integrasi-api.js"></script>
+</body>
+</html>

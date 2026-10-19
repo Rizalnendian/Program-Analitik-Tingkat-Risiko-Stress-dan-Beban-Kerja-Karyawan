@@ -1,0 +1,111 @@
+<!doctype html>
+<html lang="en" data-bs-theme="light">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link
+            href="https://cdn.jsdelivr.net/npm/bootstrap@6.0.0-alpha.1/dist/css/bootstrap.min.css"
+            rel="stylesheet"
+            integrity="sha384-B/GM4XqrwHnWXNOWMbloTmrYXZg10cakYGmpfsR/bbzQ6JAJI4ihuyADKLnBgrCe"
+            crossorigin="anonymous"
+        />
+        <link
+            href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+            rel="stylesheet"
+        />
+        <link rel="stylesheet" href="CSS/index.css" />
+        <link
+            rel="stylesheet"
+            href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css"
+        />
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400..900;1,6..96,400..900&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
+            rel="stylesheet"
+        />
+        <link rel="icon" type="image/svg+xml" href="LOGO warna.svg" />
+
+        <title>Login</title>
+    </head>
+    <body>
+        <div class="content">
+            <!-- Branding Side -->
+            <div class="branding col-6">
+                <div class="container-branding">
+                    <img
+                        src="LOGO putih.svg"
+                        alt="Logo"
+                        class="logo"
+                        width="50"
+                        height="50"
+                    />
+                    <h2 class="nama">EquiMind</h2>
+                    <p class="font deskripsi">
+                        Platform analitik beban kerja perusahaan & pelaporan
+                        hasil kerja karyawan. Akurat, cepat, dan presisi!
+                    </p>
+                </div>
+            </div>
+
+            <!-- Form Side -->
+            <div class="login-form col-6">
+                <div class="container-login">
+                    <!-- Title login  -->
+                    <div class="sign-up" style="margin-bottom: 20px">
+                        <h4 class="font">Selamat datang!</h4>
+                        <p class="font">
+                            Don't have an account?
+                            <a href="signup.html" class="sign-up"
+                                >Create a new account now!</a
+                            >
+                        </p>
+                    </div>
+
+                    <!-- Email form -->
+                    <div class="form-floating" style="margin-bottom: 10px">
+                        <input
+                            type="email"
+                            class="form-control"
+                            id="floatingInputEmail"
+                            placeholder="Email"
+                        />
+
+                        <label for="floatingInputEmail">Email</label>
+                    </div>
+
+                    <!-- Password -->
+                    <div class="form-floating" style="margin-bottom: 10px">
+                        <input
+                            type="password"
+                            class="form-control"
+                            id="floatingPassword"
+                            placeholder="Password"
+                        />
+                        <label for="floatingPassword">Password</label>
+                    </div>
+
+                    <!-- Botton -->
+                    <div class="form-floating button mb-3">
+                        <button class="submit-btn" type="submit">
+                            Sign in
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <script
+            src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
+            integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
+            crossorigin="anonymous"
+        ></script>
+        <script
+            type="module"
+            src="https://cdn.jsdelivr.net/npm/bootstrap@6.0.0-alpha.1/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-1a/pXj49ZQ1aHEmrJ+gMw1otqoVsYwlEnlD8mIfY2TV03r20Y0CN7uqx1tQogjPL"
+            crossorigin="anonymous"
+        ></script>
+    <script src="JavaScript/integrasi-api.js"></script>
+</body>
+</html>

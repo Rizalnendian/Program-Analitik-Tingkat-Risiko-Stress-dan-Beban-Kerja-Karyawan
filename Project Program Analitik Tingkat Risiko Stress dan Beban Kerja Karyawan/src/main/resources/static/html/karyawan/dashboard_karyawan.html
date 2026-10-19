@@ -1,0 +1,157 @@
+<!doctype html>
+<html lang="en" data-bs-theme="light">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Dashboard</title>
+
+        <link
+            rel="stylesheet"
+            href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css"
+        />
+        <link rel="icon" type="image/svg+xml" href="../../LOGO warna.svg" />
+        <link
+            href="https://cdn.jsdelivr.net/npm/bootstrap@6.0.0-alpha.1/dist/css/bootstrap.min.css"
+            rel="stylesheet"
+            integrity="sha384-B/GM4XqrwHnWXNOWMbloTmrYXZg10cakYGmpfsR/bbzQ6JAJI4ihuyADKLnBgrCe"
+            crossorigin="anonymous"
+        />
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link
+            rel="stylesheet"
+            href="../../CSS/karyawan/dashboard_karyawan.css"
+        />
+    </head>
+    <body>
+        <div class="app-layout" id="appDashboard">
+            <!-- Sidebar Overlay (Latar Belakang Gelap di Mobile) -->
+            <div class="sidebar-overlay" id="sidebarOverlay"></div>
+
+            <!-- Navbar samping -->
+            <aside class="sidebar" id="sidebar">
+                <!-- Logo atas navbar -->
+                <div class="sidebar-logo">
+                    <div class="logo-icon">
+                        <img
+                            src="../../LOGO putih.svg"
+                            alt="Logo"
+                            class="logo"
+                            width="32"
+                            height="32"
+                        />
+                    </div>
+                    <div class="logo-text">
+                        <span class="app-name">EquiMind</span>
+                        <span class="app-sub"
+                            >Sistem analitik stress dan beban kerja</span
+                        >
+                    </div>
+
+                    <!-- Tombol Tutup Khusus Mobile -->
+                    <button class="sidebar-close-btn" id="sidebarCloseBtn">
+                        <i class="bi bi-x-lg"></i>
+                    </button>
+                </div>
+
+                <!-- User profile preview -->
+                <div class="sidebar-user">
+                    <div class="user-avatar">3</div>
+                    <div class="user-name">Test nanti disini muncul nama</div>
+                    <div class="user-role">Karyawan</div>
+                </div>
+
+                <!-- Opsi navigasi halaman -->
+                <nav class="sidebar-nav">
+                    <div class="nav-label">Menu Utama</div>
+
+                    <div class="nav-item active">
+                        <span class="nav-icon"
+                            ><i class="bi bi-house-door"></i
+                        ></span>
+                        <span>Dashboard</span>
+                    </div>
+
+                    <div
+                        class="nav-item"
+                        onclick="
+                            window.location.href = '../karyawan/profile.html'
+                        "
+                    >
+                        <span class="nav-icon"
+                            ><i class="bi bi-person-circle"></i
+                        ></span>
+                        <span>Profile</span>
+                    </div>
+
+                    <div
+                        class="nav-item"
+                        onclick="
+                            window.location.href = '../karyawan/survei.html'
+                        "
+                    >
+                        <span class="nav-icon"
+                            ><i class="bi bi-file-earmark-medical"></i
+                        ></span>
+                        <span>Survei</span>
+                    </div>
+                </nav>
+
+                <!-- Footer navbar -->
+                <div class="sidebar-footer">
+                    <button
+                        class="btn btn-outline btn-full btn-sm"
+                        style="
+                            color: rgba(255, 255, 255, 0.6);
+                            border-color: rgba(255, 255, 255, 0.2);
+                            width: 100%;
+                            display: flex;
+                            align-items: center;
+                            gap: 8px;
+                        "
+                    >
+                        <span><i class="bi bi-door-closed"></i></span>
+                        <span><a href="../../index.html">Logout</a></span>
+                    </button>
+                </div>
+            </aside>
+
+            <!-- AREA KANAN -->
+            <div class="right-panel">
+                <!-- TOP BAR -->
+                <header class="top-bar">
+                    <div class="topbar-left">
+                        <!-- Tombol ini hanya akan muncul di layar HP -->
+                        <button class="mobile-toggle-btn" id="sidebarToggleBtn">
+                            <i class="bi bi-list"></i>
+                        </button>
+                        <h2>Dashboard</h2>
+                    </div>
+
+                    <div class="topbar-right">
+                        <span class="topbar-time" id="hari-tanggal"
+                            >-- -- ----</span
+                        >
+                    </div>
+                </header>
+
+                <!-- CONTAINER KONTEN -->
+                <main class="content-container">
+                    <div class="inner-content">
+                        <h1>test</h1>
+                    </div>
+                </main>
+            </div>
+        </div>
+
+        <!-- JavaScript untuk Toggle Menu -->
+        <script src="../../JavaScript/eksternal.js" defer></script>
+        <script
+            type="module"
+            src="https://cdn.jsdelivr.net/npm/bootstrap@6.0.0-alpha.1/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-1a/pXj49ZQ1aHEmrJ+gMw1otqoVsYwlEnlD8mIfY2TV03r20Y0CN7uqx1tQogjPL"
+            crossorigin="anonymous"
+        ></script>
+    <script src="../../JavaScript/integrasi-api.js"></script>
+</body>
+</html>

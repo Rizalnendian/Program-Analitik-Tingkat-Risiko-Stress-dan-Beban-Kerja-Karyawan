@@ -1,0 +1,3388 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Survei</title>
+        <link rel="stylesheet" href="../../CSS/karyawan/survei.css" />
+        <link
+            rel="stylesheet"
+            href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css"
+        />
+        <link rel="icon" type="image/svg+xml" href="../../LOGO warna.svg" />
+
+        <link
+            href="https://cdn.jsdelivr.net/npm/bootstrap@6.0.0-alpha.1/dist/css/bootstrap.min.css"
+            rel="stylesheet"
+            integrity="sha384-B/GM4XqrwHnWXNOWMbloTmrYXZg10cakYGmpfsR/bbzQ6JAJI4ihuyADKLnBgrCe"
+            crossorigin="anonymous"
+        />
+        <link
+            href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+            rel="stylesheet"
+            integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
+            crossorigin="anonymous"
+        />
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link rel="stylesheet" href="../../CSS/karyawan/profile.css" />
+    </head>
+    <body>
+        <div class="app-layout" id="appDashboard">
+            <!-- Sidebar Overlay (Latar Belakang Gelap di Mobile) -->
+            <div class="sidebar-overlay" id="sidebarOverlay"></div>
+
+            <!-- Navbar samping -->
+            <aside class="sidebar" id="sidebar">
+                <!-- Logo atas navbar -->
+                <div class="sidebar-logo">
+                    <div class="logo-icon">
+                        <img
+                            src="../../LOGO putih.svg"
+                            alt="Logo"
+                            class="logo"
+                            width="32"
+                            height="32"
+                        />
+                    </div>
+                    <div class="logo-text">
+                        <span class="app-name">EquiMind</span>
+                        <span class="app-sub"
+                            >Sistem analitik stress dan beban kerja</span
+                        >
+                    </div>
+
+                    <!-- Tombol Tutup Khusus Mobile -->
+                    <button class="sidebar-close-btn" id="sidebarCloseBtn">
+                        <i class="bi bi-x-lg"></i>
+                    </button>
+                </div>
+
+                <!-- User profile preview -->
+                <div class="sidebar-user">
+                    <div class="user-avatar">3</div>
+                    <div class="user-name">Test nanti disini muncul nama</div>
+                    <div class="user-role">Karyawan</div>
+                </div>
+
+                <!-- Opsi navigasi halaman -->
+                <nav class="sidebar-nav">
+                    <div class="nav-label">Menu Utama</div>
+
+                    <div
+                        class="nav-item"
+                        onclick="
+                            window.location.href =
+                                '../karyawan/dashboard_karyawan.html'
+                        "
+                    >
+                        <span class="nav-icon"
+                            ><i class="bi bi-house-door"></i
+                        ></span>
+                        <span>Dashboard</span>
+                    </div>
+
+                    <div
+                        class="nav-item"
+                        onclick="
+                            window.location.href = '../karyawan/profile.html'
+                        "
+                    >
+                        <span class="nav-icon"
+                            ><i class="bi bi-person-circle"></i
+                        ></span>
+                        <span>Profile</span>
+                    </div>
+
+                    <div class="nav-item active">
+                        <span class="nav-icon"
+                            ><i class="bi bi-file-earmark-medical"></i
+                        ></span>
+                        <span>Survei</span>
+                    </div>
+                </nav>
+
+                <!-- Footer navbar -->
+                <div class="sidebar-footer">
+                    <button
+                        class="btn btn-outline btn-full btn-sm"
+                        style="
+                            color: rgba(255, 255, 255, 0.6);
+                            border-color: rgba(255, 255, 255, 0.2);
+                            width: 100%;
+                            display: flex;
+                            align-items: center;
+                            gap: 8px;
+                        "
+                    >
+                        <span><i class="bi bi-door-closed"></i></span>
+                        <span><a href="../../index.html">Logout</a></span>
+                    </button>
+                </div>
+            </aside>
+
+            <!-- AREA KANAN -->
+            <div class="right-panel">
+                <!-- TOP BAR -->
+                <header class="top-bar">
+                    <div class="topbar-left">
+                        <!-- Tombol ini hanya akan muncul di layar HP -->
+                        <button class="mobile-toggle-btn" id="sidebarToggleBtn">
+                            <i class="bi bi-list"></i>
+                        </button>
+                        <h2>Survei</h2>
+                    </div>
+
+                    <div class="topbar-right">
+                        <span class="topbar-time" id="hari-tanggal"
+                            >-- -- ----</span
+                        >
+                    </div>
+                </header>
+
+                <!-- CONTAINER KONTEN -->
+                <main class="content-container">
+                    <!-- Pengantar -->
+                    <div class="inner-content">
+                        <div class="survei_form">
+                            <h1 class="survei_section_title">Pengantar</h1>
+                            <p class="survei_deskripsi">
+                                Survei ini membantu perusahaan memahami kondisi
+                                kerja dan beban kerja karyawan. Jawablah sesuai
+                                pengalaman Anda selama satu bulan terakhir.
+                                Tidak ada jawaban benar atau salah. Hasil
+                                individu hanya bisa dilihat oleh Anda sendiri.
+                                Manajer hanya melihat ringkasan kelompok yang
+                                terdiri dari minimal 10 orang. Survei ini bukan
+                                penilaian kinerja. Baca pertanyaan dengan
+                                seksama dan jawab dengan jujur.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Bagian 1 -->
+                    <div class="inner-content">
+                        <div class="survei_form">
+                            <h4 class="survei_section_title">
+                                Bagian 1: Seberapa Berat Pekerjaan Anda?
+                            </h4>
+                            <p
+                                class="survei_deskripsi"
+                                style="text-align: justify; margin-bottom: 10px"
+                            >
+                                Geser penanda sesuai yang Anda rasakan selama
+                                sebulan terakhir untuk menunjukkan tingkat beban
+                                kerja Anda dari 0-100. Jawaban 0 berarti sangat
+                                rendah, 50 berarti netral, dan 100 berarti
+                                sangat tinggi. Jawaban Anda akan membantu
+                                perusahaan memahami kondisi kerja dan beban
+                                kerja karyawan.
+                            </p>
+                            <div
+                                class="form-group slider-1"
+                                style="margin-bottom: 30px"
+                            >
+                                <label for="rangeBubble" class="form-label"
+                                    >Seberapa besar aktivitas mental dan
+                                    persepsi (misalnya berpikir, mengambil
+                                    keputusan, menghitung, mengingat, mengamati,
+                                    mencari) yang dibutuhkan pekerjaan
+                                    Anda?</label
+                                >
+
+                                <div class="slider-wrapper">
+                                    <div class="slider-top">
+                                        <span
+                                            id="rangeValue"
+                                            class="slider-value"
+                                            >-</span
+                                        >
+                                    </div>
+                                    <input
+                                        type="range"
+                                        min="0"
+                                        max="100"
+                                        value="-"
+                                        id="myRange"
+                                    />
+                                    <div class="slider-bottom">
+                                        <span>Sangat rendah</span>
+                                        <span>Netral</span>
+                                        <span>Sangat Tinggi</span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div
+                                class="form-group slider-1"
+                                style="margin-bottom: 30px"
+                            >
+                                <label for="rangeBubble" class="form-label"
+                                    >Seberapa besar aktivitas fisik (misalnya
+                                    mendorong, menarik, menggerakkan,
+                                    mengendalikan alat) yang dibutuhkan
+                                    pekerjaan Anda?</label
+                                >
+                                <div class="slider-wrapper">
+                                    <div class="slider-top">
+                                        <span
+                                            id="rangeValue"
+                                            class="slider-value"
+                                            >-</span
+                                        >
+                                    </div>
+                                    <input
+                                        type="range"
+                                        min="0"
+                                        max="100"
+                                        value="-"
+                                        list="rangeTicksList"
+                                        id="myRange"
+                                    />
+                                    <div class="slider-bottom">
+                                        <span>Sangat rendah</span>
+                                        <span>Netral</span>
+                                        <span>Sangat Tinggi</span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div
+                                class="form-group slider-1"
+                                style="margin-bottom: 20px"
+                            >
+                                <label for="rangeBubble" class="form-label"
+                                    >Seberapa besar tekanan waktu yang Anda
+                                    rasakan terhadap laju atau kecepatan
+                                    pekerjaan? Apakah tempo kerja lambat dan
+                                    santai, atau cepat dan menuntut?</label
+                                >
+                                <div class="slider-wrapper">
+                                    <div class="slider-top">
+                                        <span
+                                            id="rangeValue"
+                                            class="slider-value"
+                                            >-</span
+                                        >
+                                    </div>
+                                    <input
+                                        type="range"
+                                        min="0"
+                                        max="100"
+                                        value="-"
+                                        id="myRange"
+                                    />
+                                    <div class="slider-bottom">
+                                        <span>Sangat rendah</span>
+                                        <span>Netral</span>
+                                        <span>Sangat Tinggi</span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div
+                                class="form-group slider-1"
+                                style="margin-bottom: 30px"
+                            >
+                                <label for="rangeBubble" class="form-label"
+                                    >Seberapa berhasil Anda mencapai tujuan
+                                    pekerjaan Anda? Seberapa puas Anda dengan
+                                    hasil yang dicapai?</label
+                                >
+                                <div class="slider-wrapper">
+                                    <div class="slider-top">
+                                        <span
+                                            id="rangeValue"
+                                            class="slider-value"
+                                            >-</span
+                                        >
+                                    </div>
+                                    <input
+                                        type="range"
+                                        min="0"
+                                        max="100"
+                                        value="-"
+                                        list="rangeTicksList"
+                                        id="myRange"
+                                    />
+                                    <div class="slider-bottom">
+                                        <span>Sangat rendah</span>
+                                        <span>Netral</span>
+                                        <span>Sangat Tinggi</span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div
+                                class="form-group slider-1"
+                                style="margin-bottom: 30px"
+                            >
+                                <label for="rangeBubble" class="form-label"
+                                    >Seberapa keras Anda harus bekerja (secara
+                                    mental dan fisik) untuk mencapai tingkat
+                                    capaian Anda?</label
+                                >
+                                <div class="slider-wrapper">
+                                    <div class="slider-top">
+                                        <span
+                                            id="rangeValue"
+                                            class="slider-value"
+                                            >-</span
+                                        >
+                                    </div>
+                                    <input
+                                        type="range"
+                                        min="0"
+                                        max="100"
+                                        value="-"
+                                        list="rangeTicksList"
+                                        id="myRange"
+                                    />
+                                    <div class="slider-bottom">
+                                        <span>Sangat rendah</span>
+                                        <span>Netral</span>
+                                        <span>Sangat Tinggi</span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div
+                                class="form-group slider-1"
+                                style="margin-bottom: 30px"
+                            >
+                                <label for="rangeBubble" class="form-label"
+                                    >Seberapa besar Anda merasa tidak aman,
+                                    putus asa, tersinggung, stres, dan
+                                    terganggu, dibandingkan dengan merasa aman,
+                                    puas, nyaman, dan tenang selama
+                                    bekerja?</label
+                                >
+                                <div class="slider-wrapper">
+                                    <div class="slider-top">
+                                        <span
+                                            id="rangeValue"
+                                            class="slider-value"
+                                            >-</span
+                                        >
+                                    </div>
+                                    <input
+                                        type="range"
+                                        min="0"
+                                        max="100"
+                                        value="-"
+                                        list="rangeTicksList"
+                                        id="myRange"
+                                    />
+                                    <div class="slider-bottom">
+                                        <span>Sangat rendah</span>
+                                        <span>Netral</span>
+                                        <span>Sangat Tinggi</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Bagian 2 -->
+                    <div class="inner-content">
+                        <div class="survei_form">
+                            <h4 class="survei_section_title">
+                                Bagian 2: Mana yang Lebih Berpengaruh?
+                            </h4>
+                            <p
+                                class="survei_deskripsi"
+                                style="text-align: justify; margin-bottom: 10px"
+                            >
+                                Pada setiap pasangan, pilih satu hal yang
+                                menurut Anda lebih berpengaruh terhadap beban
+                                kerja Anda.. Jawab dengan jujur sesuai
+                                pengalaman Anda selama satu bulan terakhir.
+                                Jawaban Anda akan membantu perusahaan memahami
+                                kondisi kerja dan beban kerja karyawan.
+                            </p>
+
+                            <div class="row gx-4">
+                                <div class="col-12 col-md-6">
+                                    <div
+                                        class="form-group row radio-2"
+                                        style="margin-bottom: 20px"
+                                    >
+                                        <div
+                                            class="col-12"
+                                            style="margin-bottom: 10px"
+                                        >
+                                            <label
+                                                for="radioLabel"
+                                                class="form-label col-12"
+                                                >(1) Pasangan 1</label
+                                            >
+                                        </div>
+
+                                        <div class="radio-container">
+                                            <!-- Pilihan 1 -->
+                                            <label class="radio-card">
+                                                <input
+                                                    type="radio"
+                                                    name="pilihan_opsi"
+                                                    checked
+                                                />
+                                                <span class="radio-label"
+                                                    >Kebutuhan Mental</span
+                                                >
+                                            </label>
+
+                                            <!-- Pilihan 2 -->
+                                            <label class="radio-card">
+                                                <input
+                                                    type="radio"
+                                                    name="pilihan_opsi"
+                                                />
+                                                <span class="radio-label"
+                                                    >Kebutuhan Fisik</span
+                                                >
+                                            </label>
+                                        </div>
+                                    </div>
+
+                                    <div
+                                        class="form-group row radio-2"
+                                        style="margin-bottom: 20px"
+                                    >
+                                        <div
+                                            class="col-12"
+                                            style="margin-bottom: 10px"
+                                        >
+                                            <label
+                                                for="radioLabel"
+                                                class="form-label col-12"
+                                                >(2) Pasangan 2</label
+                                            >
+                                        </div>
+
+                                        <div class="radio-container">
+                                            <!-- Pilihan 1 -->
+                                            <label class="radio-card">
+                                                <input
+                                                    type="radio"
+                                                    name="pilihan_opsi"
+                                                    checked
+                                                />
+                                                <span class="radio-label"
+                                                    >Kebutuhan Mental</span
+                                                >
+                                            </label>
+
+                                            <!-- Pilihan 2 -->
+                                            <label class="radio-card">
+                                                <input
+                                                    type="radio"
+                                                    name="pilihan_opsi"
+                                                />
+                                                <span class="radio-label"
+                                                    >Kebutuhan Waktu</span
+                                                >
+                                            </label>
+                                        </div>
+                                    </div>
+
+                                    <div
+                                        class="form-group row radio-2"
+                                        style="margin-bottom: 20px"
+                                    >
+                                        <div
+                                            class="col-12"
+                                            style="margin-bottom: 10px"
+                                        >
+                                            <label
+                                                for="radioLabel"
+                                                class="form-label col-12"
+                                                >(3) Pasangan 3</label
+                                            >
+                                        </div>
+
+                                        <div class="radio-container">
+                                            <!-- Pilihan 1 -->
+                                            <label class="radio-card">
+                                                <input
+                                                    type="radio"
+                                                    name="pilihan_opsi"
+                                                    checked
+                                                />
+                                                <span class="radio-label"
+                                                    >Kebutuhan Mental</span
+                                                >
+                                            </label>
+
+                                            <!-- Pilihan 2 -->
+                                            <label class="radio-card">
+                                                <input
+                                                    type="radio"
+                                                    name="pilihan_opsi"
+                                                />
+                                                <span class="radio-label"
+                                                    >Performansi</span
+                                                >
+                                            </label>
+                                        </div>
+                                    </div>
+
+                                    <div
+                                        class="form-group row radio-2"
+                                        style="margin-bottom: 20px"
+                                    >
+                                        <div
+                                            class="col-12"
+                                            style="margin-bottom: 10px"
+                                        >
+                                            <label
+                                                for="radioLabel"
+                                                class="form-label col-12"
+                                                >(4) Pasangan 4</label
+                                            >
+                                        </div>
+
+                                        <div class="radio-container">
+                                            <!-- Pilihan 1 -->
+                                            <label class="radio-card">
+                                                <input
+                                                    type="radio"
+                                                    name="pilihan_opsi"
+                                                    checked
+                                                />
+                                                <span class="radio-label"
+                                                    >Kebutuhan Mental</span
+                                                >
+                                            </label>
+
+                                            <!-- Pilihan 2 -->
+                                            <label class="radio-card">
+                                                <input
+                                                    type="radio"
+                                                    name="pilihan_opsi"
+                                                />
+                                                <span class="radio-label"
+                                                    >Tingkat Usaha</span
+                                                >
+                                            </label>
+                                        </div>
+                                    </div>
+
+                                    <div
+                                        class="form-group row radio-2"
+                                        style="margin-bottom: 20px"
+                                    >
+                                        <div
+                                            class="col-12"
+                                            style="margin-bottom: 10px"
+                                        >
+                                            <label
+                                                for="radioLabel"
+                                                class="form-label col-12"
+                                                >(5) Pasangan 5</label
+                                            >
+                                        </div>
+
+                                        <div class="radio-container">
+                                            <!-- Pilihan 1 -->
+                                            <label class="radio-card">
+                                                <input
+                                                    type="radio"
+                                                    name="pilihan_opsi"
+                                                    checked
+                                                />
+                                                <span class="radio-label"
+                                                    >Kebutuhan Mental</span
+                                                >
+                                            </label>
+
+                                            <!-- Pilihan 2 -->
+                                            <label class="radio-card">
+                                                <input
+                                                    type="radio"
+                                                    name="pilihan_opsi"
+                                                />
+                                                <span class="radio-label"
+                                                    >Tingkat Frustrasi</span
+                                                >
+                                            </label>
+                                        </div>
+                                    </div>
+
+                                    <div
+                                        class="form-group row radio-2"
+                                        style="margin-bottom: 20px"
+                                    >
+                                        <div
+                                            class="col-12"
+                                            style="margin-bottom: 10px"
+                                        >
+                                            <label
+                                                for="radioLabel"
+                                                class="form-label col-12"
+                                                >(6) Pasangan 6</label
+                                            >
+                                        </div>
+
+                                        <div class="radio-container">
+                                            <!-- Pilihan 1 -->
+                                            <label class="radio-card">
+                                                <input
+                                                    type="radio"
+                                                    name="pilihan_opsi"
+                                                    checked
+                                                />
+                                                <span class="radio-label"
+                                                    >Kebutuhan Fisik</span
+                                                >
+                                            </label>
+
+                                            <!-- Pilihan 2 -->
+                                            <label class="radio-card">
+                                                <input
+                                                    type="radio"
+                                                    name="pilihan_opsi"
+                                                />
+                                                <span class="radio-label"
+                                                    >Kebutuhan Waktu</span
+                                                >
+                                            </label>
+                                        </div>
+                                    </div>
+
+                                    <div
+                                        class="form-group row radio-2"
+                                        style="margin-bottom: 20px"
+                                    >
+                                        <div
+                                            class="col-12"
+                                            style="margin-bottom: 10px"
+                                        >
+                                            <label
+                                                for="radioLabel"
+                                                class="form-label col-12"
+                                                >(7) Pasangan 7</label
+                                            >
+                                        </div>
+
+                                        <div class="radio-container">
+                                            <!-- Pilihan 1 -->
+                                            <label class="radio-card">
+                                                <input
+                                                    type="radio"
+                                                    name="pilihan_opsi"
+                                                    checked
+                                                />
+                                                <span class="radio-label"
+                                                    >Kebutuhan Fisik</span
+                                                >
+                                            </label>
+
+                                            <!-- Pilihan 2 -->
+                                            <label class="radio-card">
+                                                <input
+                                                    type="radio"
+                                                    name="pilihan_opsi"
+                                                />
+                                                <span class="radio-label"
+                                                    >Performansi</span
+                                                >
+                                            </label>
+                                        </div>
+                                    </div>
+
+                                    <div
+                                        class="form-group row radio-2"
+                                        style="margin-bottom: 20px"
+                                    >
+                                        <div
+                                            class="col-12"
+                                            style="margin-bottom: 10px"
+                                        >
+                                            <label
+                                                for="radioLabel"
+                                                class="form-label col-12"
+                                                >(8) Pasangan 8</label
+                                            >
+                                        </div>
+
+                                        <div class="radio-container">
+                                            <!-- Pilihan 1 -->
+                                            <label class="radio-card">
+                                                <input
+                                                    type="radio"
+                                                    name="pilihan_opsi"
+                                                    checked
+                                                />
+                                                <span class="radio-label"
+                                                    >Kebutuhan Fisik</span
+                                                >
+                                            </label>
+
+                                            <!-- Pilihan 2 -->
+                                            <label class="radio-card">
+                                                <input
+                                                    type="radio"
+                                                    name="pilihan_opsi"
+                                                />
+                                                <span class="radio-label"
+                                                    >Tingkat Usaha</span
+                                                >
+                                            </label>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="col-12 col-md-6">
+                                    <div
+                                        class="form-group row radio-2"
+                                        style="margin-bottom: 20px"
+                                    >
+                                        <div
+                                            class="col-12"
+                                            style="margin-bottom: 10px"
+                                        >
+                                            <label
+                                                for="radioLabel"
+                                                class="form-label col-12"
+                                                >(9) Pasangan 9</label
+                                            >
+                                        </div>
+
+                                        <div class="radio-container">
+                                            <!-- Pilihan 1 -->
+                                            <label class="radio-card">
+                                                <input
+                                                    type="radio"
+                                                    name="pilihan_opsi"
+                                                    checked
+                                                />
+                                                <span class="radio-label"
+                                                    >Kebutuhan Fisik</span
+                                                >
+                                            </label>
+
+                                            <!-- Pilihan 2 -->
+                                            <label class="radio-card">
+                                                <input
+                                                    type="radio"
+                                                    name="pilihan_opsi"
+                                                />
+                                                <span class="radio-label"
+                                                    >Tingkat Frustrasi</span
+                                                >
+                                            </label>
+                                        </div>
+                                    </div>
+
+                                    <div
+                                        class="form-group row radio-2"
+                                        style="margin-bottom: 20px"
+                                    >
+                                        <div
+                                            class="col-12"
+                                            style="margin-bottom: 10px"
+                                        >
+                                            <label
+                                                for="radioLabel"
+                                                class="form-label col-12"
+                                                >(10) Pasangan 10</label
+                                            >
+                                        </div>
+
+                                        <div class="radio-container">
+                                            <!-- Pilihan 1 -->
+                                            <label class="radio-card">
+                                                <input
+                                                    type="radio"
+                                                    name="pilihan_opsi"
+                                                    checked
+                                                />
+                                                <span class="radio-label"
+                                                    >Kebutuhan Waktu</span
+                                                >
+                                            </label>
+
+                                            <!-- Pilihan 2 -->
+                                            <label class="radio-card">
+                                                <input
+                                                    type="radio"
+                                                    name="pilihan_opsi"
+                                                />
+                                                <span class="radio-label"
+                                                    >Performansi</span
+                                                >
+                                            </label>
+                                        </div>
+                                    </div>
+
+                                    <div
+                                        class="form-group row radio-2"
+                                        style="margin-bottom: 20px"
+                                    >
+                                        <div
+                                            class="col-12"
+                                            style="margin-bottom: 10px"
+                                        >
+                                            <label
+                                                for="radioLabel"
+                                                class="form-label col-12"
+                                                >(11) Pasangan 11</label
+                                            >
+                                        </div>
+
+                                        <div class="radio-container">
+                                            <!-- Pilihan 1 -->
+                                            <label class="radio-card">
+                                                <input
+                                                    type="radio"
+                                                    name="pilihan_opsi"
+                                                    checked
+                                                />
+                                                <span class="radio-label"
+                                                    >Kebutuhan Waktu</span
+                                                >
+                                            </label>
+
+                                            <!-- Pilihan 2 -->
+                                            <label class="radio-card">
+                                                <input
+                                                    type="radio"
+                                                    name="pilihan_opsi"
+                                                />
+                                                <span class="radio-label"
+                                                    >Tingkat Usaha</span
+                                                >
+                                            </label>
+                                        </div>
+                                    </div>
+
+                                    <div
+                                        class="form-group row radio-2"
+                                        style="margin-bottom: 20px"
+                                    >
+                                        <div
+                                            class="col-12"
+                                            style="margin-bottom: 10px"
+                                        >
+                                            <label
+                                                for="radioLabel"
+                                                class="form-label col-12"
+                                                >(12) Pasangan 12</label
+                                            >
+                                        </div>
+
+                                        <div class="radio-container">
+                                            <!-- Pilihan 1 -->
+                                            <label class="radio-card">
+                                                <input
+                                                    type="radio"
+                                                    name="pilihan_opsi"
+                                                    checked
+                                                />
+                                                <span class="radio-label"
+                                                    >Kebutuhan Waktu</span
+                                                >
+                                            </label>
+
+                                            <!-- Pilihan 2 -->
+                                            <label class="radio-card">
+                                                <input
+                                                    type="radio"
+                                                    name="pilihan_opsi"
+                                                />
+                                                <span class="radio-label"
+                                                    >Tingkat Frustrasi</span
+                                                >
+                                            </label>
+                                        </div>
+                                    </div>
+
+                                    <div
+                                        class="form-group row radio-2"
+                                        style="margin-bottom: 20px"
+                                    >
+                                        <div
+                                            class="col-12"
+                                            style="margin-bottom: 10px"
+                                        >
+                                            <label
+                                                for="radioLabel"
+                                                class="form-label col-12"
+                                                >(13) Pasangan 13</label
+                                            >
+                                        </div>
+
+                                        <div class="radio-container">
+                                            <!-- Pilihan 1 -->
+                                            <label class="radio-card">
+                                                <input
+                                                    type="radio"
+                                                    name="pilihan_opsi"
+                                                    checked
+                                                />
+                                                <span class="radio-label"
+                                                    >Performansi</span
+                                                >
+                                            </label>
+
+                                            <!-- Pilihan 2 -->
+                                            <label class="radio-card">
+                                                <input
+                                                    type="radio"
+                                                    name="pilihan_opsi"
+                                                />
+                                                <span class="radio-label"
+                                                    >Tingkat Usaha</span
+                                                >
+                                            </label>
+                                        </div>
+                                    </div>
+
+                                    <div
+                                        class="form-group row radio-2"
+                                        style="margin-bottom: 20px"
+                                    >
+                                        <div
+                                            class="col-12"
+                                            style="margin-bottom: 10px"
+                                        >
+                                            <label
+                                                for="radioLabel"
+                                                class="form-label col-12"
+                                                >(14) Pasangan 14</label
+                                            >
+                                        </div>
+
+                                        <div class="radio-container">
+                                            <!-- Pilihan 1 -->
+                                            <label class="radio-card">
+                                                <input
+                                                    type="radio"
+                                                    name="pilihan_opsi"
+                                                    checked
+                                                />
+                                                <span class="radio-label"
+                                                    >Performansi</span
+                                                >
+                                            </label>
+
+                                            <!-- Pilihan 2 -->
+                                            <label class="radio-card">
+                                                <input
+                                                    type="radio"
+                                                    name="pilihan_opsi"
+                                                />
+                                                <span class="radio-label"
+                                                    >Tingkat Frustrasi</span
+                                                >
+                                            </label>
+                                        </div>
+                                    </div>
+
+                                    <div
+                                        class="form-group row radio-2"
+                                        style="margin-bottom: 20px"
+                                    >
+                                        <div
+                                            class="col-12"
+                                            style="margin-bottom: 10px"
+                                        >
+                                            <label
+                                                for="radioLabel"
+                                                class="form-label col-12"
+                                                >(15) Pasangan 15</label
+                                            >
+                                        </div>
+
+                                        <div class="radio-container">
+                                            <!-- Pilihan 1 -->
+                                            <label class="radio-card">
+                                                <input
+                                                    type="radio"
+                                                    name="pilihan_opsi"
+                                                    checked
+                                                />
+                                                <span class="radio-label"
+                                                    >Tingkat Usaha</span
+                                                >
+                                            </label>
+
+                                            <!-- Pilihan 2 -->
+                                            <label class="radio-card">
+                                                <input
+                                                    type="radio"
+                                                    name="pilihan_opsi"
+                                                />
+                                                <span class="radio-label"
+                                                    >Tingkat Frustrasi</span
+                                                >
+                                            </label>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Bagian 3 -->
+                    <div class="inner-content">
+                        <div class="survei_form">
+                            <h4 class="survei_section_title">
+                                Bagian 3: Kondisi di Tempat Kerja Anda
+                            </h4>
+                            <p
+                                class="survei_deskripsi"
+                                style="text-align: justify; margin-bottom: 10px"
+                            >
+                                Jawab pertanyaan dibawah dengan memilih pilihan
+                                Tidak pernah (1), Jarang (2), Kadang-kadang (3),
+                                Sering (4), Selalu (5). Jawab dengan jujur
+                                sesuai pengalaman Anda selama satu bulan
+                                terakhir. Jawaban Anda akan membantu perusahaan
+                                memahami kondisi kerja dan beban kerja karyawan.
+                            </p>
+
+                            <div
+                                class="form-group row hse"
+                                style="margin-bottom: 20px"
+                            >
+                                <div class="col-12" style="margin-bottom: 10px">
+                                    <label
+                                        for="radioLabel"
+                                        class="form-label col-12"
+                                        >(1) Saya jelas tentang apa yang
+                                        diharapkan dari saya di tempat
+                                        kerja.</label
+                                    >
+                                </div>
+
+                                <div class="radio-container">
+                                    <!-- Pilihan 1 -->
+                                    <label class="radio-card">
+                                        <input
+                                            type="radio"
+                                            name="pilihan_opsi"
+                                            checked
+                                        />
+                                        <span class="radio-label"
+                                            >Tidak pernah</span
+                                        >
+                                    </label>
+
+                                    <!-- Pilihan 2 -->
+                                    <label class="radio-card">
+                                        <input
+                                            type="radio"
+                                            name="pilihan_opsi"
+                                        />
+                                        <span class="radio-label">Jarang</span>
+                                    </label>
+
+                                    <!-- Pilihan 3 -->
+                                    <label class="radio-card">
+                                        <input
+                                            type="radio"
+                                            name="pilihan_opsi"
+                                        />
+                                        <span class="radio-label"
+                                            >Kadang-kadang</span
+                                        >
+                                    </label>
+
+                                    <!-- Pilihan 4 -->
+                                    <label class="radio-card">
+                                        <input
+                                            type="radio"
+                                            name="pilihan_opsi"
+                                        />
+                                        <span class="radio-label">Sering</span>
+                                    </label>
+
+                                    <!-- Pilihan 5 -->
+                                    <label class="radio-card">
+                                        <input
+                                            type="radio"
+                                            name="pilihan_opsi"
+                                        />
+                                        <span class="radio-label">Selalu</span>
+                                    </label>
+                                </div>
+                            </div>
+
+                            <div
+                                class="form-group row hse"
+                                style="margin-bottom: 20px"
+                            >
+                                <div class="col-12" style="margin-bottom: 10px">
+                                    <label
+                                        for="radioLabel"
+                                        class="form-label col-12"
+                                        >(2) Saya bisa menentukan kapan saya
+                                        beristirahat.</label
+                                    >
+                                </div>
+
+                                <div class="radio-container">
+                                    <!-- Pilihan 1 -->
+                                    <label class="radio-card">
+                                        <input
+                                            type="radio"
+                                            name="pilihan_opsi"
+                                            checked
+                                        />
+                                        <span class="radio-label"
+                                            >Tidak pernah</span
+                                        >
+                                    </label>
+
+                                    <!-- Pilihan 2 -->
+                                    <label class="radio-card">
+                                        <input
+                                            type="radio"
+                                            name="pilihan_opsi"
+                                        />
+                                        <span class="radio-label">Jarang</span>
+                                    </label>
+
+                                    <!-- Pilihan 3 -->
+                                    <label class="radio-card">
+                                        <input
+                                            type="radio"
+                                            name="pilihan_opsi"
+                                        />
+                                        <span class="radio-label"
+                                            >Kadang-kadang</span
+                                        >
+                                    </label>
+
+                                    <!-- Pilihan 4 -->
+                                    <label class="radio-card">
+                                        <input
+                                            type="radio"
+                                            name="pilihan_opsi"
+                                        />
+                                        <span class="radio-label">Sering</span>
+                                    </label>
+
+                                    <!-- Pilihan 5 -->
+                                    <label class="radio-card">
+                                        <input
+                                            type="radio"
+                                            name="pilihan_opsi"
+                                        />
+                                        <span class="radio-label">Selalu</span>
+                                    </label>
+                                </div>
+                            </div>
+
+                            <div
+                                class="form-group row hse"
+                                style="margin-bottom: 20px"
+                            >
+                                <div class="col-12" style="margin-bottom: 10px">
+                                    <label
+                                        for="radioLabel"
+                                        class="form-label col-12"
+                                        >(3) Pihak-pihak yang berbeda di tempat
+                                        kerja menuntut hal-hal dari saya yang
+                                        sulit dipenuhi sekaligus.</label
+                                    >
+                                </div>
+
+                                <div class="radio-container">
+                                    <!-- Pilihan 1 -->
+                                    <label class="radio-card">
+                                        <input
+                                            type="radio"
+                                            name="pilihan_opsi"
+                                            checked
+                                        />
+                                        <span class="radio-label"
+                                            >Tidak pernah</span
+                                        >
+                                    </label>
+
+                                    <!-- Pilihan 2 -->
+                                    <label class="radio-card">
+                                        <input
+                                            type="radio"
+                                            name="pilihan_opsi"
+                                        />
+                                        <span class="radio-label">Jarang</span>
+                                    </label>
+
+                                    <!-- Pilihan 3 -->
+                                    <label class="radio-card">
+                                        <input
+                                            type="radio"
+                                            name="pilihan_opsi"
+                                        />
+                                        <span class="radio-label"
+                                            >Kadang-kadang</span
+                                        >
+                                    </label>
+
+                                    <!-- Pilihan 4 -->
+                                    <label class="radio-card">
+                                        <input
+                                            type="radio"
+                                            name="pilihan_opsi"
+                                        />
+                                        <span class="radio-label">Sering</span>
+                                    </label>
+
+                                    <!-- Pilihan 5 -->
+                                    <label class="radio-card">
+                                        <input
+                                            type="radio"
+                                            name="pilihan_opsi"
+                                        />
+                                        <span class="radio-label">Selalu</span>
+                                    </label>
+                                </div>
+                            </div>
+
+                            <div
+                                class="form-group row hse"
+                                style="margin-bottom: 20px"
+                            >
+                                <div class="col-12" style="margin-bottom: 10px">
+                                    <label
+                                        for="radioLabel"
+                                        class="form-label col-12"
+                                        >(4) Saya tahu cara menyelesaikan
+                                        pekerjaan saya.</label
+                                    >
+                                </div>
+
+                                <div class="radio-container">
+                                    <!-- Pilihan 1 -->
+                                    <label class="radio-card">
+                                        <input
+                                            type="radio"
+                                            name="pilihan_opsi"
+                                            checked
+                                        />
+                                        <span class="radio-label"
+                                            >Tidak pernah</span
+                                        >
+                                    </label>
+
+                                    <!-- Pilihan 2 -->
+                                    <label class="radio-card">
+                                        <input
+                                            type="radio"
+                                            name="pilihan_opsi"
+                                        />
+                                        <span class="radio-label">Jarang</span>
+                                    </label>
+
+                                    <!-- Pilihan 3 -->
+                                    <label class="radio-card">
+                                        <input
+                                            type="radio"
+                                            name="pilihan_opsi"
+                                        />
+                                        <span class="radio-label"
+                                            >Kadang-kadang</span
+                                        >
+                                    </label>
+
+                                    <!-- Pilihan 4 -->
+                                    <label class="radio-card">
+                                        <input
+                                            type="radio"
+                                            name="pilihan_opsi"
+                                        />
+                                        <span class="radio-label">Sering</span>
+                                    </label>
+
+                                    <!-- Pilihan 5 -->
+                                    <label class="radio-card">
+                                        <input
+                                            type="radio"
+                                            name="pilihan_opsi"
+                                        />
+                                        <span class="radio-label">Selalu</span>
+                                    </label>
+                                </div>
+                            </div>
+
+                            <div
+                                class="form-group row hse"
+                                style="margin-bottom: 20px"
+                            >
+                                <div class="col-12" style="margin-bottom: 10px">
+                                    <label
+                                        for="radioLabel"
+                                        class="form-label col-12"
+                                        >(5) Saya mengalami pelecehan pribadi
+                                        berupa ucapan atau perilaku yang tidak
+                                        menyenangkan.</label
+                                    >
+                                </div>
+
+                                <div class="radio-container">
+                                    <!-- Pilihan 1 -->
+                                    <label class="radio-card">
+                                        <input
+                                            type="radio"
+                                            name="pilihan_opsi"
+                                            checked
+                                        />
+                                        <span class="radio-label"
+                                            >Tidak pernah</span
+                                        >
+                                    </label>
+
+                                    <!-- Pilihan 2 -->
+                                    <label class="radio-card">
+                                        <input
+                                            type="radio"
+                                            name="pilihan_opsi"
+                                        />
+                                        <span class="radio-label">Jarang</span>
+                                    </label>
+
+                                    <!-- Pilihan 3 -->
+                                    <label class="radio-card">
+                                        <input
+                                            type="radio"
+                                            name="pilihan_opsi"
+                                        />
+                                        <span class="radio-label"
+                                            >Kadang-kadang</span
+                                        >
+                                    </label>
+
+                                    <!-- Pilihan 4 -->
+                                    <label class="radio-card">
+                                        <input
+                                            type="radio"
+                                            name="pilihan_opsi"
+                                        />
+                                        <span class="radio-label">Sering</span>
+                                    </label>
+
+                                    <!-- Pilihan 5 -->
+                                    <label class="radio-card">
+                                        <input
+                                            type="radio"
+                                            name="pilihan_opsi"
+                                        />
+                                        <span class="radio-label">Selalu</span>
+                                    </label>
+                                </div>
+                            </div>
+
+                            <div
+                                class="form-group row hse"
+                                style="margin-bottom: 20px"
+                            >
+                                <div class="col-12" style="margin-bottom: 10px">
+                                    <label
+                                        for="radioLabel"
+                                        class="form-label col-12"
+                                        >(6) Saya memiliki tenggat waktu yang
+                                        mustahil dicapai.</label
+                                    >
+                                </div>
+
+                                <div class="radio-container">
+                                    <!-- Pilihan 1 -->
+                                    <label class="radio-card">
+                                        <input
+                                            type="radio"
+                                            name="pilihan_opsi"
+                                            checked
+                                        />
+                                        <span class="radio-label"
+                                            >Tidak pernah</span
+                                        >
+                                    </label>
+
+                                    <!-- Pilihan 2 -->
+                                    <label class="radio-card">
+                                        <input
+                                            type="radio"
+                                            name="pilihan_opsi"
+                                        />
+                                        <span class="radio-label">Jarang</span>
+                                    </label>
+
+                                    <!-- Pilihan 3 -->
+                                    <label class="radio-card">
+                                        <input
+                                            type="radio"
+                                            name="pilihan_opsi"
+                                        />
+                                        <span class="radio-label"
+                                            >Kadang-kadang</span
+                                        >
+                                    </label>
+
+                                    <!-- Pilihan 4 -->
+                                    <label class="radio-card">
+                                        <input
+                                            type="radio"
+                                            name="pilihan_opsi"
+                                        />
+                                        <span class="radio-label">Sering</span>
+                                    </label>
+
+                                    <!-- Pilihan 5 -->
+                                    <label class="radio-card">
+                                        <input
+                                            type="radio"
+                                            name="pilihan_opsi"
+                                        />
+                                        <span class="radio-label">Selalu</span>
+                                    </label>
+                                </div>
+                            </div>
+
+                            <div
+                                class="form-group row hse"
+                                style="margin-bottom: 20px"
+                            >
+                                <div class="col-12" style="margin-bottom: 10px">
+                                    <label
+                                        for="radioLabel"
+                                        class="form-label col-12"
+                                        >(7) Jika pekerjaan menjadi sulit, rekan
+                                        kerja saya akan membantu saya.</label
+                                    >
+                                </div>
+
+                                <div class="radio-container">
+                                    <!-- Pilihan 1 -->
+                                    <label class="radio-card">
+                                        <input
+                                            type="radio"
+                                            name="pilihan_opsi"
+                                            checked
+                                        />
+                                        <span class="radio-label"
+                                            >Tidak pernah</span
+                                        >
+                                    </label>
+
+                                    <!-- Pilihan 2 -->
+                                    <label class="radio-card">
+                                        <input
+                                            type="radio"
+                                            name="pilihan_opsi"
+                                        />
+                                        <span class="radio-label">Jarang</span>
+                                    </label>
+
+                                    <!-- Pilihan 3 -->
+                                    <label class="radio-card">
+                                        <input
+                                            type="radio"
+                                            name="pilihan_opsi"
+                                        />
+                                        <span class="radio-label"
+                                            >Kadang-kadang</span
+                                        >
+                                    </label>
+
+                                    <!-- Pilihan 4 -->
+                                    <label class="radio-card">
+                                        <input
+                                            type="radio"
+                                            name="pilihan_opsi"
+                                        />
+                                        <span class="radio-label">Sering</span>
+                                    </label>
+
+                                    <!-- Pilihan 5 -->
+                                    <label class="radio-card">
+                                        <input
+                                            type="radio"
+                                            name="pilihan_opsi"
+                                        />
+                                        <span class="radio-label">Selalu</span>
+                                    </label>
+                                </div>
+                            </div>
+
+                            <div
+                                class="form-group row hse"
+                                style="margin-bottom: 20px"
+                            >
+                                <div class="col-12" style="margin-bottom: 10px">
+                                    <label
+                                        for="radioLabel"
+                                        class="form-label col-12"
+                                        >(8) Saya mendapat umpan balik yang
+                                        mendukung atas pekerjaan saya.</label
+                                    >
+                                </div>
+
+                                <div class="radio-container">
+                                    <!-- Pilihan 1 -->
+                                    <label class="radio-card">
+                                        <input
+                                            type="radio"
+                                            name="pilihan_opsi"
+                                            checked
+                                        />
+                                        <span class="radio-label"
+                                            >Tidak pernah</span
+                                        >
+                                    </label>
+
+                                    <!-- Pilihan 2 -->
+                                    <label class="radio-card">
+                                        <input
+                                            type="radio"
+                                            name="pilihan_opsi"
+                                        />
+                                        <span class="radio-label">Jarang</span>
+                                    </label>
+
+                                    <!-- Pilihan 3 -->
+                                    <label class="radio-card">
+                                        <input
+                                            type="radio"
+                                            name="pilihan_opsi"
+                                        />
+                                        <span class="radio-label"
+                                            >Kadang-kadang</span
+                                        >
+                                    </label>
+
+                                    <!-- Pilihan 4 -->
+                                    <label class="radio-card">
+                                        <input
+                                            type="radio"
+                                            name="pilihan_opsi"
+                                        />
+                                        <span class="radio-label">Sering</span>
+                                    </label>
+
+                                    <!-- Pilihan 5 -->
+                                    <label class="radio-card">
+                                        <input
+                                            type="radio"
+                                            name="pilihan_opsi"
+                                        />
+                                        <span class="radio-label">Selalu</span>
+                                    </label>
+                                </div>
+                            </div>
+
+                            <div
+                                class="form-group row hse"
+                                style="margin-bottom: 20px"
+                            >
+                                <div class="col-12" style="margin-bottom: 10px">
+                                    <label
+                                        for="radioLabel"
+                                        class="form-label col-12"
+                                        >(9) Saya harus bekerja dengan sangat
+                                        intens.</label
+                                    >
+                                </div>
+
+                                <div class="radio-container">
+                                    <!-- Pilihan 1 -->
+                                    <label class="radio-card">
+                                        <input
+                                            type="radio"
+                                            name="pilihan_opsi"
+                                            checked
+                                        />
+                                        <span class="radio-label"
+                                            >Tidak pernah</span
+                                        >
+                                    </label>
+
+                                    <!-- Pilihan 2 -->
+                                    <label class="radio-card">
+                                        <input
+                                            type="radio"
+                                            name="pilihan_opsi"
+                                        />
+                                        <span class="radio-label">Jarang</span>
+                                    </label>
+
+                                    <!-- Pilihan 3 -->
+                                    <label class="radio-card">
+                                        <input
+                                            type="radio"
+                                            name="pilihan_opsi"
+                                        />
+                                        <span class="radio-label"
+                                            >Kadang-kadang</span
+                                        >
+                                    </label>
+
+                                    <!-- Pilihan 4 -->
+                                    <label class="radio-card">
+                                        <input
+                                            type="radio"
+                                            name="pilihan_opsi"
+                                        />
+                                        <span class="radio-label">Sering</span>
+                                    </label>
+
+                                    <!-- Pilihan 5 -->
+                                    <label class="radio-card">
+                                        <input
+                                            type="radio"
+                                            name="pilihan_opsi"
+                                        />
+                                        <span class="radio-label">Selalu</span>
+                                    </label>
+                                </div>
+                            </div>
+
+                            <div
+                                class="form-group row hse"
+                                style="margin-bottom: 20px"
+                            >
+                                <div class="col-12" style="margin-bottom: 10px">
+                                    <label
+                                        for="radioLabel"
+                                        class="form-label col-12"
+                                        >(10) Saya ikut menentukan kecepatan
+                                        kerja saya.</label
+                                    >
+                                </div>
+
+                                <div class="radio-container">
+                                    <!-- Pilihan 1 -->
+                                    <label class="radio-card">
+                                        <input
+                                            type="radio"
+                                            name="pilihan_opsi"
+                                            checked
+                                        />
+                                        <span class="radio-label"
+                                            >Tidak pernah</span
+                                        >
+                                    </label>
+
+                                    <!-- Pilihan 2 -->
+                                    <label class="radio-card">
+                                        <input
+                                            type="radio"
+                                            name="pilihan_opsi"
+                                        />
+                                        <span class="radio-label">Jarang</span>
+                                    </label>
+
+                                    <!-- Pilihan 3 -->
+                                    <label class="radio-card">
+                                        <input
+                                            type="radio"
+                                            name="pilihan_opsi"
+                                        />
+                                        <span class="radio-label"
+                                            >Kadang-kadang</span
+                                        >
+                                    </label>
+
+                                    <!-- Pilihan 4 -->
+                                    <label class="radio-card">
+                                        <input
+                                            type="radio"
+                                            name="pilihan_opsi"
+                                        />
+                                        <span class="radio-label">Sering</span>
+                                    </label>
+
+                                    <!-- Pilihan 5 -->
+                                    <label class="radio-card">
+                                        <input
+                                            type="radio"
+                                            name="pilihan_opsi"
+                                        />
+                                        <span class="radio-label">Selalu</span>
+                                    </label>
+                                </div>
+                            </div>
+
+                            <div
+                                class="form-group row hse"
+                                style="margin-bottom: 20px"
+                            >
+                                <div class="col-12" style="margin-bottom: 10px">
+                                    <label
+                                        for="radioLabel"
+                                        class="form-label col-12"
+                                        >(11) Saya jelas tentang tugas dan
+                                        tanggung jawab saya.</label
+                                    >
+                                </div>
+
+                                <div class="radio-container">
+                                    <!-- Pilihan 1 -->
+                                    <label class="radio-card">
+                                        <input
+                                            type="radio"
+                                            name="pilihan_opsi"
+                                            checked
+                                        />
+                                        <span class="radio-label"
+                                            >Tidak pernah</span
+                                        >
+                                    </label>
+
+                                    <!-- Pilihan 2 -->
+                                    <label class="radio-card">
+                                        <input
+                                            type="radio"
+                                            name="pilihan_opsi"
+                                        />
+                                        <span class="radio-label">Jarang</span>
+                                    </label>
+
+                                    <!-- Pilihan 3 -->
+                                    <label class="radio-card">
+                                        <input
+                                            type="radio"
+                                            name="pilihan_opsi"
+                                        />
+                                        <span class="radio-label"
+                                            >Kadang-kadang</span
+                                        >
+                                    </label>
+
+                                    <!-- Pilihan 4 -->
+                                    <label class="radio-card">
+                                        <input
+                                            type="radio"
+                                            name="pilihan_opsi"
+                                        />
+                                        <span class="radio-label">Sering</span>
+                                    </label>
+
+                                    <!-- Pilihan 5 -->
+                                    <label class="radio-card">
+                                        <input
+                                            type="radio"
+                                            name="pilihan_opsi"
+                                        />
+                                        <span class="radio-label">Selalu</span>
+                                    </label>
+                                </div>
+                            </div>
+
+                            <div
+                                class="form-group row hse"
+                                style="margin-bottom: 20px"
+                            >
+                                <div class="col-12" style="margin-bottom: 10px">
+                                    <label
+                                        for="radioLabel"
+                                        class="form-label col-12"
+                                        >(12) Saya terpaksa mengabaikan sebagian
+                                        tugas karena pekerjaan saya terlalu
+                                        banyak.</label
+                                    >
+                                </div>
+
+                                <div class="radio-container">
+                                    <!-- Pilihan 1 -->
+                                    <label class="radio-card">
+                                        <input
+                                            type="radio"
+                                            name="pilihan_opsi"
+                                            checked
+                                        />
+                                        <span class="radio-label"
+                                            >Tidak pernah</span
+                                        >
+                                    </label>
+
+                                    <!-- Pilihan 2 -->
+                                    <label class="radio-card">
+                                        <input
+                                            type="radio"
+                                            name="pilihan_opsi"
+                                        />
+                                        <span class="radio-label">Jarang</span>
+                                    </label>
+
+                                    <!-- Pilihan 3 -->
+                                    <label class="radio-card">
+                                        <input
+                                            type="radio"
+                                            name="pilihan_opsi"
+                                        />
+                                        <span class="radio-label"
+                                            >Kadang-kadang</span
+                                        >
+                                    </label>
+
+                                    <!-- Pilihan 4 -->
+                                    <label class="radio-card">
+                                        <input
+                                            type="radio"
+                                            name="pilihan_opsi"
+                                        />
+                                        <span class="radio-label">Sering</span>
+                                    </label>
+
+                                    <!-- Pilihan 5 -->
+                                    <label class="radio-card">
+                                        <input
+                                            type="radio"
+                                            name="pilihan_opsi"
+                                        />
+                                        <span class="radio-label">Selalu</span>
+                                    </label>
+                                </div>
+                            </div>
+
+                            <div
+                                class="form-group row hse"
+                                style="margin-bottom: 20px"
+                            >
+                                <div class="col-12" style="margin-bottom: 10px">
+                                    <label
+                                        for="radioLabel"
+                                        class="form-label col-12"
+                                        >(13) Saya jelas tentang sasaran dan
+                                        tujuan divisi saya.</label
+                                    >
+                                </div>
+
+                                <div class="radio-container">
+                                    <!-- Pilihan 1 -->
+                                    <label class="radio-card">
+                                        <input
+                                            type="radio"
+                                            name="pilihan_opsi"
+                                            checked
+                                        />
+                                        <span class="radio-label"
+                                            >Tidak pernah</span
+                                        >
+                                    </label>
+
+                                    <!-- Pilihan 2 -->
+                                    <label class="radio-card">
+                                        <input
+                                            type="radio"
+                                            name="pilihan_opsi"
+                                        />
+                                        <span class="radio-label">Jarang</span>
+                                    </label>
+
+                                    <!-- Pilihan 3 -->
+                                    <label class="radio-card">
+                                        <input
+                                            type="radio"
+                                            name="pilihan_opsi"
+                                        />
+                                        <span class="radio-label"
+                                            >Kadang-kadang</span
+                                        >
+                                    </label>
+
+                                    <!-- Pilihan 4 -->
+                                    <label class="radio-card">
+                                        <input
+                                            type="radio"
+                                            name="pilihan_opsi"
+                                        />
+                                        <span class="radio-label">Sering</span>
+                                    </label>
+
+                                    <!-- Pilihan 5 -->
+                                    <label class="radio-card">
+                                        <input
+                                            type="radio"
+                                            name="pilihan_opsi"
+                                        />
+                                        <span class="radio-label">Selalu</span>
+                                    </label>
+                                </div>
+                            </div>
+
+                            <div
+                                class="form-group row hse"
+                                style="margin-bottom: 20px"
+                            >
+                                <div class="col-12" style="margin-bottom: 10px">
+                                    <label
+                                        for="radioLabel"
+                                        class="form-label col-12"
+                                        >(14) Ada gesekan atau kemarahan di
+                                        antara rekan kerja.</label
+                                    >
+                                </div>
+
+                                <div class="radio-container">
+                                    <!-- Pilihan 1 -->
+                                    <label class="radio-card">
+                                        <input
+                                            type="radio"
+                                            name="pilihan_opsi"
+                                            checked
+                                        />
+                                        <span class="radio-label"
+                                            >Tidak pernah</span
+                                        >
+                                    </label>
+
+                                    <!-- Pilihan 2 -->
+                                    <label class="radio-card">
+                                        <input
+                                            type="radio"
+                                            name="pilihan_opsi"
+                                        />
+                                        <span class="radio-label">Jarang</span>
+                                    </label>
+
+                                    <!-- Pilihan 3 -->
+                                    <label class="radio-card">
+                                        <input
+                                            type="radio"
+                                            name="pilihan_opsi"
+                                        />
+                                        <span class="radio-label"
+                                            >Kadang-kadang</span
+                                        >
+                                    </label>
+
+                                    <!-- Pilihan 4 -->
+                                    <label class="radio-card">
+                                        <input
+                                            type="radio"
+                                            name="pilihan_opsi"
+                                        />
+                                        <span class="radio-label">Sering</span>
+                                    </label>
+
+                                    <!-- Pilihan 5 -->
+                                    <label class="radio-card">
+                                        <input
+                                            type="radio"
+                                            name="pilihan_opsi"
+                                        />
+                                        <span class="radio-label">Selalu</span>
+                                    </label>
+                                </div>
+                            </div>
+
+                            <div
+                                class="form-group row hse"
+                                style="margin-bottom: 20px"
+                            >
+                                <div class="col-12" style="margin-bottom: 10px">
+                                    <label
+                                        for="radioLabel"
+                                        class="form-label col-12"
+                                        >(15) Saya bisa memilih cara mengerjakan
+                                        pekerjaan saya.</label
+                                    >
+                                </div>
+
+                                <div class="radio-container">
+                                    <!-- Pilihan 1 -->
+                                    <label class="radio-card">
+                                        <input
+                                            type="radio"
+                                            name="pilihan_opsi"
+                                            checked
+                                        />
+                                        <span class="radio-label"
+                                            >Tidak pernah</span
+                                        >
+                                    </label>
+
+                                    <!-- Pilihan 2 -->
+                                    <label class="radio-card">
+                                        <input
+                                            type="radio"
+                                            name="pilihan_opsi"
+                                        />
+                                        <span class="radio-label">Jarang</span>
+                                    </label>
+
+                                    <!-- Pilihan 3 -->
+                                    <label class="radio-card">
+                                        <input
+                                            type="radio"
+                                            name="pilihan_opsi"
+                                        />
+                                        <span class="radio-label"
+                                            >Kadang-kadang</span
+                                        >
+                                    </label>
+
+                                    <!-- Pilihan 4 -->
+                                    <label class="radio-card">
+                                        <input
+                                            type="radio"
+                                            name="pilihan_opsi"
+                                        />
+                                        <span class="radio-label">Sering</span>
+                                    </label>
+
+                                    <!-- Pilihan 5 -->
+                                    <label class="radio-card">
+                                        <input
+                                            type="radio"
+                                            name="pilihan_opsi"
+                                        />
+                                        <span class="radio-label">Selalu</span>
+                                    </label>
+                                </div>
+                            </div>
+
+                            <div
+                                class="form-group row hse"
+                                style="margin-bottom: 20px"
+                            >
+                                <div class="col-12" style="margin-bottom: 10px">
+                                    <label
+                                        for="radioLabel"
+                                        class="form-label col-12"
+                                        >(16) Saya tidak bisa mengambil
+                                        istirahat yang cukup.</label
+                                    >
+                                </div>
+
+                                <div class="radio-container">
+                                    <!-- Pilihan 1 -->
+                                    <label class="radio-card">
+                                        <input
+                                            type="radio"
+                                            name="pilihan_opsi"
+                                            checked
+                                        />
+                                        <span class="radio-label"
+                                            >Tidak pernah</span
+                                        >
+                                    </label>
+
+                                    <!-- Pilihan 2 -->
+                                    <label class="radio-card">
+                                        <input
+                                            type="radio"
+                                            name="pilihan_opsi"
+                                        />
+                                        <span class="radio-label">Jarang</span>
+                                    </label>
+
+                                    <!-- Pilihan 3 -->
+                                    <label class="radio-card">
+                                        <input
+                                            type="radio"
+                                            name="pilihan_opsi"
+                                        />
+                                        <span class="radio-label"
+                                            >Kadang-kadang</span
+                                        >
+                                    </label>
+
+                                    <!-- Pilihan 4 -->
+                                    <label class="radio-card">
+                                        <input
+                                            type="radio"
+                                            name="pilihan_opsi"
+                                        />
+                                        <span class="radio-label">Sering</span>
+                                    </label>
+
+                                    <!-- Pilihan 5 -->
+                                    <label class="radio-card">
+                                        <input
+                                            type="radio"
+                                            name="pilihan_opsi"
+                                        />
+                                        <span class="radio-label">Selalu</span>
+                                    </label>
+                                </div>
+                            </div>
+
+                            <div
+                                class="form-group row hse"
+                                style="margin-bottom: 20px"
+                            >
+                                <div class="col-12" style="margin-bottom: 10px">
+                                    <label
+                                        for="radioLabel"
+                                        class="form-label col-12"
+                                        >(17) Saya memahami bagaimana pekerjaan
+                                        saya berkaitan dengan tujuan organisasi
+                                        secara keseluruhan.</label
+                                    >
+                                </div>
+
+                                <div class="radio-container">
+                                    <!-- Pilihan 1 -->
+                                    <label class="radio-card">
+                                        <input
+                                            type="radio"
+                                            name="pilihan_opsi"
+                                            checked
+                                        />
+                                        <span class="radio-label"
+                                            >Tidak pernah</span
+                                        >
+                                    </label>
+
+                                    <!-- Pilihan 2 -->
+                                    <label class="radio-card">
+                                        <input
+                                            type="radio"
+                                            name="pilihan_opsi"
+                                        />
+                                        <span class="radio-label">Jarang</span>
+                                    </label>
+
+                                    <!-- Pilihan 3 -->
+                                    <label class="radio-card">
+                                        <input
+                                            type="radio"
+                                            name="pilihan_opsi"
+                                        />
+                                        <span class="radio-label"
+                                            >Kadang-kadang</span
+                                        >
+                                    </label>
+
+                                    <!-- Pilihan 4 -->
+                                    <label class="radio-card">
+                                        <input
+                                            type="radio"
+                                            name="pilihan_opsi"
+                                        />
+                                        <span class="radio-label">Sering</span>
+                                    </label>
+
+                                    <!-- Pilihan 5 -->
+                                    <label class="radio-card">
+                                        <input
+                                            type="radio"
+                                            name="pilihan_opsi"
+                                        />
+                                        <span class="radio-label">Selalu</span>
+                                    </label>
+                                </div>
+                            </div>
+
+                            <div
+                                class="form-group row hse"
+                                style="margin-bottom: 20px"
+                            >
+                                <div class="col-12" style="margin-bottom: 10px">
+                                    <label
+                                        for="radioLabel"
+                                        class="form-label col-12"
+                                        >(18) Saya ditekan untuk bekerja dengan
+                                        jam kerja yang panjang.</label
+                                    >
+                                </div>
+
+                                <div class="radio-container">
+                                    <!-- Pilihan 1 -->
+                                    <label class="radio-card">
+                                        <input
+                                            type="radio"
+                                            name="pilihan_opsi"
+                                            checked
+                                        />
+                                        <span class="radio-label"
+                                            >Tidak pernah</span
+                                        >
+                                    </label>
+
+                                    <!-- Pilihan 2 -->
+                                    <label class="radio-card">
+                                        <input
+                                            type="radio"
+                                            name="pilihan_opsi"
+                                        />
+                                        <span class="radio-label">Jarang</span>
+                                    </label>
+
+                                    <!-- Pilihan 3 -->
+                                    <label class="radio-card">
+                                        <input
+                                            type="radio"
+                                            name="pilihan_opsi"
+                                        />
+                                        <span class="radio-label"
+                                            >Kadang-kadang</span
+                                        >
+                                    </label>
+
+                                    <!-- Pilihan 4 -->
+                                    <label class="radio-card">
+                                        <input
+                                            type="radio"
+                                            name="pilihan_opsi"
+                                        />
+                                        <span class="radio-label">Sering</span>
+                                    </label>
+
+                                    <!-- Pilihan 5 -->
+                                    <label class="radio-card">
+                                        <input
+                                            type="radio"
+                                            name="pilihan_opsi"
+                                        />
+                                        <span class="radio-label">Selalu</span>
+                                    </label>
+                                </div>
+                            </div>
+
+                            <div
+                                class="form-group row hse"
+                                style="margin-bottom: 20px"
+                            >
+                                <div class="col-12" style="margin-bottom: 10px">
+                                    <label
+                                        for="radioLabel"
+                                        class="form-label col-12"
+                                        >(19) Saya bisa memilih apa yang saya
+                                        kerjakan.</label
+                                    >
+                                </div>
+
+                                <div class="radio-container">
+                                    <!-- Pilihan 1 -->
+                                    <label class="radio-card">
+                                        <input
+                                            type="radio"
+                                            name="pilihan_opsi"
+                                            checked
+                                        />
+                                        <span class="radio-label"
+                                            >Tidak pernah</span
+                                        >
+                                    </label>
+
+                                    <!-- Pilihan 2 -->
+                                    <label class="radio-card">
+                                        <input
+                                            type="radio"
+                                            name="pilihan_opsi"
+                                        />
+                                        <span class="radio-label">Jarang</span>
+                                    </label>
+
+                                    <!-- Pilihan 3 -->
+                                    <label class="radio-card">
+                                        <input
+                                            type="radio"
+                                            name="pilihan_opsi"
+                                        />
+                                        <span class="radio-label"
+                                            >Kadang-kadang</span
+                                        >
+                                    </label>
+
+                                    <!-- Pilihan 4 -->
+                                    <label class="radio-card">
+                                        <input
+                                            type="radio"
+                                            name="pilihan_opsi"
+                                        />
+                                        <span class="radio-label">Sering</span>
+                                    </label>
+
+                                    <!-- Pilihan 5 -->
+                                    <label class="radio-card">
+                                        <input
+                                            type="radio"
+                                            name="pilihan_opsi"
+                                        />
+                                        <span class="radio-label">Selalu</span>
+                                    </label>
+                                </div>
+                            </div>
+
+                            <div
+                                class="form-group row hse"
+                                style="margin-bottom: 20px"
+                            >
+                                <div class="col-12" style="margin-bottom: 10px">
+                                    <label
+                                        for="radioLabel"
+                                        class="form-label col-12"
+                                        >(20) Saya harus bekerja sangat
+                                        cepat.</label
+                                    >
+                                </div>
+
+                                <div class="radio-container">
+                                    <!-- Pilihan 1 -->
+                                    <label class="radio-card">
+                                        <input
+                                            type="radio"
+                                            name="pilihan_opsi"
+                                            checked
+                                        />
+                                        <span class="radio-label"
+                                            >Tidak pernah</span
+                                        >
+                                    </label>
+
+                                    <!-- Pilihan 2 -->
+                                    <label class="radio-card">
+                                        <input
+                                            type="radio"
+                                            name="pilihan_opsi"
+                                        />
+                                        <span class="radio-label">Jarang</span>
+                                    </label>
+
+                                    <!-- Pilihan 3 -->
+                                    <label class="radio-card">
+                                        <input
+                                            type="radio"
+                                            name="pilihan_opsi"
+                                        />
+                                        <span class="radio-label"
+                                            >Kadang-kadang</span
+                                        >
+                                    </label>
+
+                                    <!-- Pilihan 4 -->
+                                    <label class="radio-card">
+                                        <input
+                                            type="radio"
+                                            name="pilihan_opsi"
+                                        />
+                                        <span class="radio-label">Sering</span>
+                                    </label>
+
+                                    <!-- Pilihan 5 -->
+                                    <label class="radio-card">
+                                        <input
+                                            type="radio"
+                                            name="pilihan_opsi"
+                                        />
+                                        <span class="radio-label">Selalu</span>
+                                    </label>
+                                </div>
+                            </div>
+
+                            <div
+                                class="form-group row hse"
+                                style="margin-bottom: 20px"
+                            >
+                                <div class="col-12" style="margin-bottom: 10px">
+                                    <label
+                                        for="radioLabel"
+                                        class="form-label col-12"
+                                        >(21) Saya mengalami perundungan
+                                        (bullying) di tempat kerja.</label
+                                    >
+                                </div>
+
+                                <div class="radio-container">
+                                    <!-- Pilihan 1 -->
+                                    <label class="radio-card">
+                                        <input
+                                            type="radio"
+                                            name="pilihan_opsi"
+                                            checked
+                                        />
+                                        <span class="radio-label"
+                                            >Tidak pernah</span
+                                        >
+                                    </label>
+
+                                    <!-- Pilihan 2 -->
+                                    <label class="radio-card">
+                                        <input
+                                            type="radio"
+                                            name="pilihan_opsi"
+                                        />
+                                        <span class="radio-label">Jarang</span>
+                                    </label>
+
+                                    <!-- Pilihan 3 -->
+                                    <label class="radio-card">
+                                        <input
+                                            type="radio"
+                                            name="pilihan_opsi"
+                                        />
+                                        <span class="radio-label"
+                                            >Kadang-kadang</span
+                                        >
+                                    </label>
+
+                                    <!-- Pilihan 4 -->
+                                    <label class="radio-card">
+                                        <input
+                                            type="radio"
+                                            name="pilihan_opsi"
+                                        />
+                                        <span class="radio-label">Sering</span>
+                                    </label>
+
+                                    <!-- Pilihan 5 -->
+                                    <label class="radio-card">
+                                        <input
+                                            type="radio"
+                                            name="pilihan_opsi"
+                                        />
+                                        <span class="radio-label">Selalu</span>
+                                    </label>
+                                </div>
+                            </div>
+
+                            <div
+                                class="form-group row hse"
+                                style="margin-bottom: 20px"
+                            >
+                                <div class="col-12" style="margin-bottom: 10px">
+                                    <label
+                                        for="radioLabel"
+                                        class="form-label col-12"
+                                        >(22) Saya menghadapi tekanan waktu yang
+                                        tidak realistis.</label
+                                    >
+                                </div>
+
+                                <div class="radio-container">
+                                    <!-- Pilihan 1 -->
+                                    <label class="radio-card">
+                                        <input
+                                            type="radio"
+                                            name="pilihan_opsi"
+                                            checked
+                                        />
+                                        <span class="radio-label"
+                                            >Tidak pernah</span
+                                        >
+                                    </label>
+
+                                    <!-- Pilihan 2 -->
+                                    <label class="radio-card">
+                                        <input
+                                            type="radio"
+                                            name="pilihan_opsi"
+                                        />
+                                        <span class="radio-label">Jarang</span>
+                                    </label>
+
+                                    <!-- Pilihan 3 -->
+                                    <label class="radio-card">
+                                        <input
+                                            type="radio"
+                                            name="pilihan_opsi"
+                                        />
+                                        <span class="radio-label"
+                                            >Kadang-kadang</span
+                                        >
+                                    </label>
+
+                                    <!-- Pilihan 4 -->
+                                    <label class="radio-card">
+                                        <input
+                                            type="radio"
+                                            name="pilihan_opsi"
+                                        />
+                                        <span class="radio-label">Sering</span>
+                                    </label>
+
+                                    <!-- Pilihan 5 -->
+                                    <label class="radio-card">
+                                        <input
+                                            type="radio"
+                                            name="pilihan_opsi"
+                                        />
+                                        <span class="radio-label">Selalu</span>
+                                    </label>
+                                </div>
+                            </div>
+
+                            <div
+                                class="form-group row hse"
+                                style="margin-bottom: 20px"
+                            >
+                                <div class="col-12" style="margin-bottom: 10px">
+                                    <label
+                                        for="radioLabel"
+                                        class="form-label col-12"
+                                        >(23) Saya bisa mengandalkan atasan
+                                        langsung untuk membantu saya saat ada
+                                        masalah pekerjaan.</label
+                                    >
+                                </div>
+
+                                <div class="radio-container">
+                                    <!-- Pilihan 1 -->
+                                    <label class="radio-card">
+                                        <input
+                                            type="radio"
+                                            name="pilihan_opsi"
+                                            checked
+                                        />
+                                        <span class="radio-label"
+                                            >Tidak pernah</span
+                                        >
+                                    </label>
+
+                                    <!-- Pilihan 2 -->
+                                    <label class="radio-card">
+                                        <input
+                                            type="radio"
+                                            name="pilihan_opsi"
+                                        />
+                                        <span class="radio-label">Jarang</span>
+                                    </label>
+
+                                    <!-- Pilihan 3 -->
+                                    <label class="radio-card">
+                                        <input
+                                            type="radio"
+                                            name="pilihan_opsi"
+                                        />
+                                        <span class="radio-label"
+                                            >Kadang-kadang</span
+                                        >
+                                    </label>
+
+                                    <!-- Pilihan 4 -->
+                                    <label class="radio-card">
+                                        <input
+                                            type="radio"
+                                            name="pilihan_opsi"
+                                        />
+                                        <span class="radio-label">Sering</span>
+                                    </label>
+
+                                    <!-- Pilihan 5 -->
+                                    <label class="radio-card">
+                                        <input
+                                            type="radio"
+                                            name="pilihan_opsi"
+                                        />
+                                        <span class="radio-label">Selalu</span>
+                                    </label>
+                                </div>
+                            </div>
+
+                            <div
+                                class="form-group row hse"
+                                style="margin-bottom: 20px"
+                            >
+                                <div class="col-12" style="margin-bottom: 10px">
+                                    <label
+                                        for="radioLabel"
+                                        class="form-label col-12"
+                                        >(24) Saya mendapat bantuan dan dukungan
+                                        yang saya butuhkan dari rekan
+                                        kerja.</label
+                                    >
+                                </div>
+
+                                <div class="radio-container">
+                                    <!-- Pilihan 1 -->
+                                    <label class="radio-card">
+                                        <input
+                                            type="radio"
+                                            name="pilihan_opsi"
+                                            checked
+                                        />
+                                        <span class="radio-label"
+                                            >Sangat tidak setuju</span
+                                        >
+                                    </label>
+
+                                    <!-- Pilihan 2 -->
+                                    <label class="radio-card">
+                                        <input
+                                            type="radio"
+                                            name="pilihan_opsi"
+                                        />
+                                        <span class="radio-label">Setuju</span>
+                                    </label>
+
+                                    <!-- Pilihan 3 -->
+                                    <label class="radio-card">
+                                        <input
+                                            type="radio"
+                                            name="pilihan_opsi"
+                                        />
+                                        <span class="radio-label">Netral</span>
+                                    </label>
+
+                                    <!-- Pilihan 4 -->
+                                    <label class="radio-card">
+                                        <input
+                                            type="radio"
+                                            name="pilihan_opsi"
+                                        />
+                                        <span class="radio-label">Setuju</span>
+                                    </label>
+
+                                    <!-- Pilihan 5 -->
+                                    <label class="radio-card">
+                                        <input
+                                            type="radio"
+                                            name="pilihan_opsi"
+                                        />
+                                        <span class="radio-label"
+                                            >Sangat setuju</span
+                                        >
+                                    </label>
+                                </div>
+                            </div>
+
+                            <div
+                                class="form-group row hse"
+                                style="margin-bottom: 20px"
+                            >
+                                <div class="col-12" style="margin-bottom: 10px">
+                                    <label
+                                        for="radioLabel"
+                                        class="form-label col-12"
+                                        >(25) Saya punya andil dalam menentukan
+                                        cara saya bekerja.</label
+                                    >
+                                </div>
+
+                                <div class="radio-container">
+                                    <!-- Pilihan 1 -->
+                                    <label class="radio-card">
+                                        <input
+                                            type="radio"
+                                            name="pilihan_opsi"
+                                            checked
+                                        />
+                                        <span class="radio-label"
+                                            >Sangat tidak setuju</span
+                                        >
+                                    </label>
+
+                                    <!-- Pilihan 2 -->
+                                    <label class="radio-card">
+                                        <input
+                                            type="radio"
+                                            name="pilihan_opsi"
+                                        />
+                                        <span class="radio-label">Setuju</span>
+                                    </label>
+
+                                    <!-- Pilihan 3 -->
+                                    <label class="radio-card">
+                                        <input
+                                            type="radio"
+                                            name="pilihan_opsi"
+                                        />
+                                        <span class="radio-label">Netral</span>
+                                    </label>
+
+                                    <!-- Pilihan 4 -->
+                                    <label class="radio-card">
+                                        <input
+                                            type="radio"
+                                            name="pilihan_opsi"
+                                        />
+                                        <span class="radio-label">Setuju</span>
+                                    </label>
+
+                                    <!-- Pilihan 5 -->
+                                    <label class="radio-card">
+                                        <input
+                                            type="radio"
+                                            name="pilihan_opsi"
+                                        />
+                                        <span class="radio-label"
+                                            >Sangat setuju</span
+                                        >
+                                    </label>
+                                </div>
+                            </div>
+
+                            <div
+                                class="form-group row hse"
+                                style="margin-bottom: 20px"
+                            >
+                                <div class="col-12" style="margin-bottom: 10px">
+                                    <label
+                                        for="radioLabel"
+                                        class="form-label col-12"
+                                        >(26) Saya punya cukup kesempatan untuk
+                                        mempertanyakan perubahan di tempat kerja
+                                        kepada manajer.</label
+                                    >
+                                </div>
+
+                                <div class="radio-container">
+                                    <!-- Pilihan 1 -->
+                                    <label class="radio-card">
+                                        <input
+                                            type="radio"
+                                            name="pilihan_opsi"
+                                            checked
+                                        />
+                                        <span class="radio-label"
+                                            >Sangat tidak setuju</span
+                                        >
+                                    </label>
+
+                                    <!-- Pilihan 2 -->
+                                    <label class="radio-card">
+                                        <input
+                                            type="radio"
+                                            name="pilihan_opsi"
+                                        />
+                                        <span class="radio-label">Setuju</span>
+                                    </label>
+
+                                    <!-- Pilihan 3 -->
+                                    <label class="radio-card">
+                                        <input
+                                            type="radio"
+                                            name="pilihan_opsi"
+                                        />
+                                        <span class="radio-label">Netral</span>
+                                    </label>
+
+                                    <!-- Pilihan 4 -->
+                                    <label class="radio-card">
+                                        <input
+                                            type="radio"
+                                            name="pilihan_opsi"
+                                        />
+                                        <span class="radio-label">Setuju</span>
+                                    </label>
+
+                                    <!-- Pilihan 5 -->
+                                    <label class="radio-card">
+                                        <input
+                                            type="radio"
+                                            name="pilihan_opsi"
+                                        />
+                                        <span class="radio-label"
+                                            >Sangat setuju</span
+                                        >
+                                    </label>
+                                </div>
+                            </div>
+
+                            <div
+                                class="form-group row hse"
+                                style="margin-bottom: 20px"
+                            >
+                                <div class="col-12" style="margin-bottom: 10px">
+                                    <label
+                                        for="radioLabel"
+                                        class="form-label col-12"
+                                        >(27) Saya mendapat rasa hormat yang
+                                        layak saya terima dari rekan
+                                        kerja.</label
+                                    >
+                                </div>
+
+                                <div class="radio-container">
+                                    <!-- Pilihan 1 -->
+                                    <label class="radio-card">
+                                        <input
+                                            type="radio"
+                                            name="pilihan_opsi"
+                                            checked
+                                        />
+                                        <span class="radio-label"
+                                            >Sangat tidak setuju</span
+                                        >
+                                    </label>
+
+                                    <!-- Pilihan 2 -->
+                                    <label class="radio-card">
+                                        <input
+                                            type="radio"
+                                            name="pilihan_opsi"
+                                        />
+                                        <span class="radio-label">Setuju</span>
+                                    </label>
+
+                                    <!-- Pilihan 3 -->
+                                    <label class="radio-card">
+                                        <input
+                                            type="radio"
+                                            name="pilihan_opsi"
+                                        />
+                                        <span class="radio-label">Netral</span>
+                                    </label>
+
+                                    <!-- Pilihan 4 -->
+                                    <label class="radio-card">
+                                        <input
+                                            type="radio"
+                                            name="pilihan_opsi"
+                                        />
+                                        <span class="radio-label">Setuju</span>
+                                    </label>
+
+                                    <!-- Pilihan 5 -->
+                                    <label class="radio-card">
+                                        <input
+                                            type="radio"
+                                            name="pilihan_opsi"
+                                        />
+                                        <span class="radio-label"
+                                            >Sangat setuju</span
+                                        >
+                                    </label>
+                                </div>
+                            </div>
+
+                            <div
+                                class="form-group row hse"
+                                style="margin-bottom: 20px"
+                            >
+                                <div class="col-12" style="margin-bottom: 10px">
+                                    <label
+                                        for="radioLabel"
+                                        class="form-label col-12"
+                                        >(28) Karyawan selalu diajak
+                                        berkonsultasi tentang perubahan di
+                                        tempat kerja.</label
+                                    >
+                                </div>
+
+                                <div class="radio-container">
+                                    <!-- Pilihan 1 -->
+                                    <label class="radio-card">
+                                        <input
+                                            type="radio"
+                                            name="pilihan_opsi"
+                                            checked
+                                        />
+                                        <span class="radio-label"
+                                            >Sangat tidak setuju</span
+                                        >
+                                    </label>
+
+                                    <!-- Pilihan 2 -->
+                                    <label class="radio-card">
+                                        <input
+                                            type="radio"
+                                            name="pilihan_opsi"
+                                        />
+                                        <span class="radio-label">Setuju</span>
+                                    </label>
+
+                                    <!-- Pilihan 3 -->
+                                    <label class="radio-card">
+                                        <input
+                                            type="radio"
+                                            name="pilihan_opsi"
+                                        />
+                                        <span class="radio-label">Netral</span>
+                                    </label>
+
+                                    <!-- Pilihan 4 -->
+                                    <label class="radio-card">
+                                        <input
+                                            type="radio"
+                                            name="pilihan_opsi"
+                                        />
+                                        <span class="radio-label">Setuju</span>
+                                    </label>
+
+                                    <!-- Pilihan 5 -->
+                                    <label class="radio-card">
+                                        <input
+                                            type="radio"
+                                            name="pilihan_opsi"
+                                        />
+                                        <span class="radio-label"
+                                            >Sangat setuju</span
+                                        >
+                                    </label>
+                                </div>
+                            </div>
+
+                            <div
+                                class="form-group row hse"
+                                style="margin-bottom: 20px"
+                            >
+                                <div class="col-12" style="margin-bottom: 10px">
+                                    <label
+                                        for="radioLabel"
+                                        class="form-label col-12"
+                                        >(29) Saya bisa berbicara dengan atasan
+                                        langsung tentang hal yang membuat saya
+                                        kesal atau terganggu terkait
+                                        pekerjaan.</label
+                                    >
+                                </div>
+
+                                <div class="radio-container">
+                                    <!-- Pilihan 1 -->
+                                    <label class="radio-card">
+                                        <input
+                                            type="radio"
+                                            name="pilihan_opsi"
+                                            checked
+                                        />
+                                        <span class="radio-label"
+                                            >Sangat tidak setuju</span
+                                        >
+                                    </label>
+
+                                    <!-- Pilihan 2 -->
+                                    <label class="radio-card">
+                                        <input
+                                            type="radio"
+                                            name="pilihan_opsi"
+                                        />
+                                        <span class="radio-label">Setuju</span>
+                                    </label>
+
+                                    <!-- Pilihan 3 -->
+                                    <label class="radio-card">
+                                        <input
+                                            type="radio"
+                                            name="pilihan_opsi"
+                                        />
+                                        <span class="radio-label">Netral</span>
+                                    </label>
+
+                                    <!-- Pilihan 4 -->
+                                    <label class="radio-card">
+                                        <input
+                                            type="radio"
+                                            name="pilihan_opsi"
+                                        />
+                                        <span class="radio-label">Setuju</span>
+                                    </label>
+
+                                    <!-- Pilihan 5 -->
+                                    <label class="radio-card">
+                                        <input
+                                            type="radio"
+                                            name="pilihan_opsi"
+                                        />
+                                        <span class="radio-label"
+                                            >Sangat setuju</span
+                                        >
+                                    </label>
+                                </div>
+                            </div>
+
+                            <div
+                                class="form-group row hse"
+                                style="margin-bottom: 20px"
+                            >
+                                <div class="col-12" style="margin-bottom: 10px">
+                                    <label
+                                        for="radioLabel"
+                                        class="form-label col-12"
+                                        >(30) Waktu kerja saya bisa
+                                        fleksibel.</label
+                                    >
+                                </div>
+
+                                <div class="radio-container">
+                                    <!-- Pilihan 1 -->
+                                    <label class="radio-card">
+                                        <input
+                                            type="radio"
+                                            name="pilihan_opsi"
+                                            checked
+                                        />
+                                        <span class="radio-label"
+                                            >Sangat tidak setuju</span
+                                        >
+                                    </label>
+
+                                    <!-- Pilihan 2 -->
+                                    <label class="radio-card">
+                                        <input
+                                            type="radio"
+                                            name="pilihan_opsi"
+                                        />
+                                        <span class="radio-label">Setuju</span>
+                                    </label>
+
+                                    <!-- Pilihan 3 -->
+                                    <label class="radio-card">
+                                        <input
+                                            type="radio"
+                                            name="pilihan_opsi"
+                                        />
+                                        <span class="radio-label">Netral</span>
+                                    </label>
+
+                                    <!-- Pilihan 4 -->
+                                    <label class="radio-card">
+                                        <input
+                                            type="radio"
+                                            name="pilihan_opsi"
+                                        />
+                                        <span class="radio-label">Setuju</span>
+                                    </label>
+
+                                    <!-- Pilihan 5 -->
+                                    <label class="radio-card">
+                                        <input
+                                            type="radio"
+                                            name="pilihan_opsi"
+                                        />
+                                        <span class="radio-label"
+                                            >Sangat setuju</span
+                                        >
+                                    </label>
+                                </div>
+                            </div>
+
+                            <div
+                                class="form-group row hse"
+                                style="margin-bottom: 20px"
+                            >
+                                <div class="col-12" style="margin-bottom: 10px">
+                                    <label
+                                        for="radioLabel"
+                                        class="form-label col-12"
+                                        >(31) Rekan kerja saya bersedia
+                                        mendengarkan masalah pekerjaan
+                                        saya.</label
+                                    >
+                                </div>
+
+                                <div class="radio-container">
+                                    <!-- Pilihan 1 -->
+                                    <label class="radio-card">
+                                        <input
+                                            type="radio"
+                                            name="pilihan_opsi"
+                                            checked
+                                        />
+                                        <span class="radio-label"
+                                            >Sangat tidak setuju</span
+                                        >
+                                    </label>
+
+                                    <!-- Pilihan 2 -->
+                                    <label class="radio-card">
+                                        <input
+                                            type="radio"
+                                            name="pilihan_opsi"
+                                        />
+                                        <span class="radio-label">Setuju</span>
+                                    </label>
+
+                                    <!-- Pilihan 3 -->
+                                    <label class="radio-card">
+                                        <input
+                                            type="radio"
+                                            name="pilihan_opsi"
+                                        />
+                                        <span class="radio-label">Netral</span>
+                                    </label>
+
+                                    <!-- Pilihan 4 -->
+                                    <label class="radio-card">
+                                        <input
+                                            type="radio"
+                                            name="pilihan_opsi"
+                                        />
+                                        <span class="radio-label">Setuju</span>
+                                    </label>
+
+                                    <!-- Pilihan 5 -->
+                                    <label class="radio-card">
+                                        <input
+                                            type="radio"
+                                            name="pilihan_opsi"
+                                        />
+                                        <span class="radio-label"
+                                            >Sangat setuju</span
+                                        >
+                                    </label>
+                                </div>
+                            </div>
+
+                            <div
+                                class="form-group row hse"
+                                style="margin-bottom: 20px"
+                            >
+                                <div class="col-12" style="margin-bottom: 10px">
+                                    <label
+                                        for="radioLabel"
+                                        class="form-label col-12"
+                                        >(32) Ketika ada perubahan di tempat
+                                        kerja, saya jelas tentang bagaimana
+                                        pelaksanaannya nanti.</label
+                                    >
+                                </div>
+
+                                <div class="radio-container">
+                                    <!-- Pilihan 1 -->
+                                    <label class="radio-card">
+                                        <input
+                                            type="radio"
+                                            name="pilihan_opsi"
+                                            checked
+                                        />
+                                        <span class="radio-label"
+                                            >Sangat tidak setuju</span
+                                        >
+                                    </label>
+
+                                    <!-- Pilihan 2 -->
+                                    <label class="radio-card">
+                                        <input
+                                            type="radio"
+                                            name="pilihan_opsi"
+                                        />
+                                        <span class="radio-label">Setuju</span>
+                                    </label>
+
+                                    <!-- Pilihan 3 -->
+                                    <label class="radio-card">
+                                        <input
+                                            type="radio"
+                                            name="pilihan_opsi"
+                                        />
+                                        <span class="radio-label">Netral</span>
+                                    </label>
+
+                                    <!-- Pilihan 4 -->
+                                    <label class="radio-card">
+                                        <input
+                                            type="radio"
+                                            name="pilihan_opsi"
+                                        />
+                                        <span class="radio-label">Setuju</span>
+                                    </label>
+
+                                    <!-- Pilihan 5 -->
+                                    <label class="radio-card">
+                                        <input
+                                            type="radio"
+                                            name="pilihan_opsi"
+                                        />
+                                        <span class="radio-label"
+                                            >Sangat setuju</span
+                                        >
+                                    </label>
+                                </div>
+                            </div>
+
+                            <div
+                                class="form-group row hse"
+                                style="margin-bottom: 20px"
+                            >
+                                <div class="col-12" style="margin-bottom: 10px">
+                                    <label
+                                        for="radioLabel"
+                                        class="form-label col-12"
+                                        >(33) Saya mendapat dukungan saat
+                                        menjalani pekerjaan yang berat secara
+                                        emosional.</label
+                                    >
+                                </div>
+
+                                <div class="radio-container">
+                                    <!-- Pilihan 1 -->
+                                    <label class="radio-card">
+                                        <input
+                                            type="radio"
+                                            name="pilihan_opsi"
+                                            checked
+                                        />
+                                        <span class="radio-label"
+                                            >Sangat tidak setuju</span
+                                        >
+                                    </label>
+
+                                    <!-- Pilihan 2 -->
+                                    <label class="radio-card">
+                                        <input
+                                            type="radio"
+                                            name="pilihan_opsi"
+                                        />
+                                        <span class="radio-label">Setuju</span>
+                                    </label>
+
+                                    <!-- Pilihan 3 -->
+                                    <label class="radio-card">
+                                        <input
+                                            type="radio"
+                                            name="pilihan_opsi"
+                                        />
+                                        <span class="radio-label">Netral</span>
+                                    </label>
+
+                                    <!-- Pilihan 4 -->
+                                    <label class="radio-card">
+                                        <input
+                                            type="radio"
+                                            name="pilihan_opsi"
+                                        />
+                                        <span class="radio-label">Setuju</span>
+                                    </label>
+
+                                    <!-- Pilihan 5 -->
+                                    <label class="radio-card">
+                                        <input
+                                            type="radio"
+                                            name="pilihan_opsi"
+                                        />
+                                        <span class="radio-label"
+                                            >Sangat setuju</span
+                                        >
+                                    </label>
+                                </div>
+                            </div>
+
+                            <div
+                                class="form-group row hse"
+                                style="margin-bottom: 20px"
+                            >
+                                <div class="col-12" style="margin-bottom: 10px">
+                                    <label
+                                        for="radioLabel"
+                                        class="form-label col-12"
+                                        >(34) Hubungan di tempat kerja terasa
+                                        tegang.</label
+                                    >
+                                </div>
+
+                                <div class="radio-container">
+                                    <!-- Pilihan 1 -->
+                                    <label class="radio-card">
+                                        <input
+                                            type="radio"
+                                            name="pilihan_opsi"
+                                            checked
+                                        />
+                                        <span class="radio-label"
+                                            >Sangat tidak setuju</span
+                                        >
+                                    </label>
+
+                                    <!-- Pilihan 2 -->
+                                    <label class="radio-card">
+                                        <input
+                                            type="radio"
+                                            name="pilihan_opsi"
+                                        />
+                                        <span class="radio-label">Setuju</span>
+                                    </label>
+
+                                    <!-- Pilihan 3 -->
+                                    <label class="radio-card">
+                                        <input
+                                            type="radio"
+                                            name="pilihan_opsi"
+                                        />
+                                        <span class="radio-label">Netral</span>
+                                    </label>
+
+                                    <!-- Pilihan 4 -->
+                                    <label class="radio-card">
+                                        <input
+                                            type="radio"
+                                            name="pilihan_opsi"
+                                        />
+                                        <span class="radio-label">Setuju</span>
+                                    </label>
+
+                                    <!-- Pilihan 5 -->
+                                    <label class="radio-card">
+                                        <input
+                                            type="radio"
+                                            name="pilihan_opsi"
+                                        />
+                                        <span class="radio-label"
+                                            >Sangat setuju</span
+                                        >
+                                    </label>
+                                </div>
+                            </div>
+
+                            <div
+                                class="form-group row hse"
+                                style="margin-bottom: 20px"
+                            >
+                                <div class="col-12" style="margin-bottom: 10px">
+                                    <label
+                                        for="radioLabel"
+                                        class="form-label col-12"
+                                        >(35) Atasan langsung saya memberi
+                                        dorongan semangat dalam bekerja.</label
+                                    >
+                                </div>
+
+                                <div class="radio-container">
+                                    <!-- Pilihan 1 -->
+                                    <label class="radio-card">
+                                        <input
+                                            type="radio"
+                                            name="pilihan_opsi"
+                                            checked
+                                        />
+                                        <span class="radio-label"
+                                            >Sangat tidak setuju</span
+                                        >
+                                    </label>
+
+                                    <!-- Pilihan 2 -->
+                                    <label class="radio-card">
+                                        <input
+                                            type="radio"
+                                            name="pilihan_opsi"
+                                        />
+                                        <span class="radio-label">Setuju</span>
+                                    </label>
+
+                                    <!-- Pilihan 3 -->
+                                    <label class="radio-card">
+                                        <input
+                                            type="radio"
+                                            name="pilihan_opsi"
+                                        />
+                                        <span class="radio-label">Netral</span>
+                                    </label>
+
+                                    <!-- Pilihan 4 -->
+                                    <label class="radio-card">
+                                        <input
+                                            type="radio"
+                                            name="pilihan_opsi"
+                                        />
+                                        <span class="radio-label">Setuju</span>
+                                    </label>
+
+                                    <!-- Pilihan 5 -->
+                                    <label class="radio-card">
+                                        <input
+                                            type="radio"
+                                            name="pilihan_opsi"
+                                        />
+                                        <span class="radio-label"
+                                            >Sangat setuju</span
+                                        >
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Button -->
+                    <div class="inner-content-btn p-4 text-center">
+                        <button
+                            class="btn btn-primary w-100 py-2"
+                            type="submit"
+                        >
+                            Kirim
+                        </button>
+                    </div>
+                </main>
+            </div>
+        </div>
+
+        <!-- JavaScript untuk Toggle Menu -->
+
+        <script src="../../JavaScript/eksternal.js" defer></script>
+    <script src="../../JavaScript/integrasi-api.js"></script>
+</body>
+</html>
+`

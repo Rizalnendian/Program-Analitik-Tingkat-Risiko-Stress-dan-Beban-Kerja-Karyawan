@@ -1,0 +1,924 @@
+<!doctype html>
+<html lang="en" data-bs-theme="light">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Dashboard</title>
+
+        <link
+            rel="stylesheet"
+            href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css"
+        />
+        <link
+            href="https://cdn.jsdelivr.net/npm/bootstrap@6.0.0-alpha.1/dist/css/bootstrap.min.css"
+            rel="stylesheet"
+            integrity="sha384-B/GM4XqrwHnWXNOWMbloTmrYXZg10cakYGmpfsR/bbzQ6JAJI4ihuyADKLnBgrCe"
+            crossorigin="anonymous"
+        />
+        <link rel="icon" type="image/svg+xml" href="../../LOGO warna.svg" />
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link rel="stylesheet" href="../../CSS/manajer/dashboard_manajer.css" />
+    </head>
+    <body>
+        <div class="app-layout" id="appDashboard">
+            <!-- Sidebar Overlay (Latar Belakang Gelap di Mobile) -->
+            <div class="sidebar-overlay" id="sidebarOverlay"></div>
+
+            <!-- Navbar samping -->
+            <aside class="sidebar" id="sidebar">
+                <!-- Logo atas navbar -->
+                <div class="sidebar-logo">
+                    <div class="logo-icon">
+                        <img
+                            src="../../LOGO putih.svg"
+                            alt="Logo"
+                            class="logo"
+                            width="32"
+                            height="32"
+                        />
+                    </div>
+                    <div class="logo-text">
+                        <span class="app-name">EquiMind</span>
+                        <span class="app-sub"
+                            >Sistem analitik stress dan beban kerja</span
+                        >
+                    </div>
+
+                    <!-- Tombol Tutup Khusus Mobile -->
+                    <button class="sidebar-close-btn" id="sidebarCloseBtn">
+                        <i class="bi bi-x-lg"></i>
+                    </button>
+                </div>
+
+                <!-- User profile preview -->
+                <div class="sidebar-user">
+                    <div class="user-avatar">3</div>
+                    <div class="user-name">Test nanti disini muncul nama</div>
+                    <div class="user-role">Manajer</div>
+                </div>
+
+                <!-- Opsi navigasi halaman -->
+                <nav class="sidebar-nav">
+                    <div class="nav-label">Menu Utama</div>
+
+                    <div class="nav-item active">
+                        <span class="nav-icon"
+                            ><i class="bi bi-house-door"></i
+                        ></span>
+                        <span>Dashboard</span>
+                    </div>
+
+                    <div
+                        class="nav-item"
+                        onclick="
+                            window.location.href = '../manajer/profile.html'
+                        "
+                    >
+                        <span class="nav-icon"
+                            ><i class="bi bi-person-circle"></i
+                        ></span>
+                        <span>Profil</span>
+                    </div>
+
+                    <div
+                        class="nav-item"
+                        onclick="
+                            window.location.href =
+                                '../manajer/alokasi_tugas.html'
+                        "
+                    >
+                        <span class="nav-icon"
+                            ><i class="bi bi-file-earmark-medical"></i
+                        ></span>
+                        <span>Penugasan</span>
+                    </div>
+                </nav>
+
+                <!-- Footer navbar -->
+                <div class="sidebar-footer">
+                    <button
+                        class="btn btn-outline btn-full btn-sm"
+                        style="
+                            color: rgba(255, 255, 255, 0.6);
+                            border-color: rgba(255, 255, 255, 0.2);
+                            width: 100%;
+                            display: flex;
+                            align-items: center;
+                            gap: 8px;
+                        "
+                    >
+                        <span><i class="bi bi-door-closed"></i></span>
+                        <span><a href="../../index.html">Logout</a></span>
+                    </button>
+                </div>
+            </aside>
+
+            <!-- AREA KANAN -->
+            <div class="right-panel">
+                <!-- TOP BAR -->
+                <header class="top-bar">
+                    <div class="topbar-left">
+                        <!-- Tombol ini hanya akan muncul di layar HP -->
+                        <button class="mobile-toggle-btn" id="sidebarToggleBtn">
+                            <i class="bi bi-list"></i>
+                        </button>
+                        <h2>Dashboard</h2>
+                    </div>
+
+                    <div class="topbar-right">
+                        <span class="topbar-time" id="hari-tanggal"
+                            >-- -- ----</span
+                        >
+                    </div>
+                </header>
+
+                <!-- CONTAINER KONTEN -->
+                <main class="content-container d-flex flex-column gap-4">
+                    <h2>Ringkasan Tim</h2>
+                    <!-- Filter Bar Atas -->
+                    <div class="analytics-filter-bar">
+                        <div class="custom-dropdown">
+                            <select class="month-select">
+                                <option value="2026-10">Oktober 2026</option>
+                                <option value="2026-09">September 2026</option>
+                                <option value="2026-08">Agustus 2026</option>
+                            </select>
+                        </div>
+
+                        <div class="division-pills">
+                            <button class="pill-btn active">
+                                Semua divisi
+                            </button>
+                            <button class="pill-btn">Finance</button>
+                            <button class="pill-btn">HR</button>
+                            <button class="pill-btn">IT</button>
+                            <button class="pill-btn">Marketing</button>
+                            <button class="pill-btn">Operasional</button>
+                        </div>
+                    </div>
+
+                    <!-- Kotak Peringatan / Info -->
+                    <div class="analytics-info-box">
+                        <i class="bi bi-info-circle info-icon"></i>
+                        <span
+                            >Kelompok dengan kurang dari 10 responden tidak
+                            ditampilkan, termasuk hasil kombinasi filter. Ini
+                            gambaran kondisi kerja, bukan penilaian individu dan
+                            bukan diagnosis.</span
+                        >
+                    </div>
+
+                    <!-- Grid Kartu Statistik (3 Kolom) -->
+                    <div class="analytics-grid-3">
+                        <!-- Rata-rata Tingkat Beban Kerja -->
+                        <div class="stat-card">
+                            <div class="card-label">
+                                Rata-rata Tingkat Beban Kerja
+                            </div>
+                            <div class="card-value-group">
+                                <span class="card-value">64,1</span>
+                                <span class="card-subvalue">/ 100</span>
+                            </div>
+                            <div class="badge-group">
+                                <span class="custom-badge badge-high"
+                                    >Tinggi</span
+                                >
+                                <span class="badge-subtext"
+                                    >+1,4 dari September</span
+                                >
+                            </div>
+                            <p class="card-footer-text">
+                                Selisih antarbulan belum diuji signifikan.
+                            </p>
+                        </div>
+
+                        <!--Rata-rata Indikator Risiko Stres Kerja -->
+                        <div class="stat-card">
+                            <div class="card-label">
+                                Rata-rata Indikator Risiko Stres Kerja
+                            </div>
+                            <div class="card-value-group">
+                                <span class="card-value">2,6</span>
+                                <span class="card-subvalue">/ 5</span>
+                            </div>
+                            <div class="badge-group">
+                                <span class="custom-badge badge-warning"
+                                    >Waspada</span
+                                >
+                                <span class="badge-subtext"
+                                    >+0,1 dari September</span
+                                >
+                            </div>
+                            <p class="card-footer-text">
+                                Indeks risiko HSE, makin tinggi makin perlu
+                                perhatian.
+                            </p>
+                        </div>
+
+                        <!-- Kartu Dimensi Risiko Tertinggi -->
+                        <div class="stat-card full-width-card">
+                            <div class="card-label">
+                                Dimensi risiko tertinggi
+                            </div>
+                            <div class="card-value-group">
+                                <span class="card-title-text">Tuntutan</span>
+                                <span class="card-score">3,5</span>
+                            </div>
+                            <div class="badge-group">
+                                <span class="custom-badge badge-warning"
+                                    >Waspada</span
+                                >
+                            </div>
+                            <p class="card-footer-text">
+                                Hampir menyentuh batas 3,5 untuk kategori Perlu
+                                perhatian.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- GRID 2 KOLOM (Matriks Kiri & Rincian Kanan) -->
+                    <div class="analytics-grid-2">
+                        <!-- KOLOM KIRI: Matriks Risiko Divisi & Dimensi -->
+                        <div class="stat-card">
+                            <h3 class="section-title">
+                                Di mana risikonya? Divisi dan dimensi kondisi
+                                kerja
+                            </h3>
+                            <p class="section-subtitle">
+                                Indeks risiko HSE 1 sampai 5 per divisi. Angka
+                                tetap tampil di tiap sel, warna hanya membantu
+                                memindai.
+                            </p>
+
+                            <div class="table-matrix-wrapper">
+                                <table class="matrix-table">
+                                    <colgroup>
+                                        <col style="width: 140px" />
+                                        <col style="width: 11%" />
+                                        <col style="width: 11%" />
+                                        <col style="width: 11%" />
+                                        <col style="width: 11%" />
+                                        <col style="width: 11%" />
+                                        <col style="width: 11%" />
+                                        <col style="width: 11%" />
+                                    </colgroup>
+                                    <thead>
+                                        <tr>
+                                            <th></th>
+                                            <th>Tuntutan</th>
+                                            <th>Kontrol</th>
+                                            <th>Dukungan atasan</th>
+                                            <th>Dukungan rekan</th>
+                                            <th>Hubungan</th>
+                                            <th>Peran</th>
+                                            <th>Perubahan</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td class="division-label">
+                                                <strong>Finance</strong
+                                                ><br /><span>n = 18</span>
+                                            </td>
+                                            <td>
+                                                <div
+                                                    class="matrix-cell cell-danger"
+                                                >
+                                                    3,9
+                                                </div>
+                                            </td>
+                                            <td>
+                                                <div
+                                                    class="matrix-cell cell-warning"
+                                                >
+                                                    3,2
+                                                </div>
+                                            </td>
+                                            <td>
+                                                <div
+                                                    class="matrix-cell cell-warning"
+                                                >
+                                                    2,6
+                                                </div>
+                                            </td>
+                                            <td>
+                                                <div
+                                                    class="matrix-cell cell-low"
+                                                >
+                                                    2,1
+                                                </div>
+                                            </td>
+                                            <td>
+                                                <div
+                                                    class="matrix-cell cell-low"
+                                                >
+                                                    2,4
+                                                </div>
+                                            </td>
+                                            <td>
+                                                <div
+                                                    class="matrix-cell cell-warning"
+                                                >
+                                                    2,7
+                                                </div>
+                                            </td>
+                                            <td>
+                                                <div
+                                                    class="matrix-cell cell-danger"
+                                                >
+                                                    3,6
+                                                </div>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td class="division-label">
+                                                <strong>HR</strong><br /><span
+                                                    >n = 14</span
+                                                >
+                                            </td>
+                                            <td>
+                                                <div
+                                                    class="matrix-cell cell-warning"
+                                                >
+                                                    3,0
+                                                </div>
+                                            </td>
+                                            <td>
+                                                <div
+                                                    class="matrix-cell cell-low"
+                                                >
+                                                    2,5
+                                                </div>
+                                            </td>
+                                            <td>
+                                                <div
+                                                    class="matrix-cell cell-low"
+                                                >
+                                                    2,1
+                                                </div>
+                                            </td>
+                                            <td>
+                                                <div
+                                                    class="matrix-cell cell-low"
+                                                >
+                                                    1,9
+                                                </div>
+                                            </td>
+                                            <td>
+                                                <div
+                                                    class="matrix-cell cell-low"
+                                                >
+                                                    1,8
+                                                </div>
+                                            </td>
+                                            <td>
+                                                <div
+                                                    class="matrix-cell cell-low"
+                                                >
+                                                    2,2
+                                                </div>
+                                            </td>
+                                            <td>
+                                                <div
+                                                    class="matrix-cell cell-warning"
+                                                >
+                                                    2,8
+                                                </div>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td class="division-label">
+                                                <strong>IT</strong><br /><span
+                                                    >n = 10</span
+                                                >
+                                            </td>
+                                            <td>
+                                                <div
+                                                    class="matrix-cell cell-warning"
+                                                >
+                                                    3,4
+                                                </div>
+                                            </td>
+                                            <td>
+                                                <div
+                                                    class="matrix-cell cell-low"
+                                                >
+                                                    2,4
+                                                </div>
+                                            </td>
+                                            <td>
+                                                <div
+                                                    class="matrix-cell cell-low"
+                                                >
+                                                    2,3
+                                                </div>
+                                            </td>
+                                            <td>
+                                                <div
+                                                    class="matrix-cell cell-low"
+                                                >
+                                                    2,0
+                                                </div>
+                                            </td>
+                                            <td>
+                                                <div
+                                                    class="matrix-cell cell-low"
+                                                >
+                                                    2,2
+                                                </div>
+                                            </td>
+                                            <td>
+                                                <div
+                                                    class="matrix-cell cell-low"
+                                                >
+                                                    2,5
+                                                </div>
+                                            </td>
+                                            <td>
+                                                <div
+                                                    class="matrix-cell cell-warning"
+                                                >
+                                                    3,1
+                                                </div>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td class="division-label">
+                                                <strong>Marketing</strong
+                                                ><br /><span>n = 10</span>
+                                            </td>
+                                            <td>
+                                                <div
+                                                    class="matrix-cell cell-warning"
+                                                >
+                                                    3,4
+                                                </div>
+                                            </td>
+                                            <td>
+                                                <div
+                                                    class="matrix-cell cell-low"
+                                                >
+                                                    2,4
+                                                </div>
+                                            </td>
+                                            <td>
+                                                <div
+                                                    class="matrix-cell cell-low"
+                                                >
+                                                    2,3
+                                                </div>
+                                            </td>
+                                            <td>
+                                                <div
+                                                    class="matrix-cell cell-low"
+                                                >
+                                                    2,0
+                                                </div>
+                                            </td>
+                                            <td>
+                                                <div
+                                                    class="matrix-cell cell-low"
+                                                >
+                                                    2,2
+                                                </div>
+                                            </td>
+                                            <td>
+                                                <div
+                                                    class="matrix-cell cell-low"
+                                                >
+                                                    2,5
+                                                </div>
+                                            </td>
+                                            <td>
+                                                <div
+                                                    class="matrix-cell cell-warning"
+                                                >
+                                                    3,1
+                                                </div>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td class="division-label">
+                                                <strong>Operasional</strong
+                                                ><br /><span>n = 10</span>
+                                            </td>
+                                            <td>
+                                                <div
+                                                    class="matrix-cell cell-warning"
+                                                >
+                                                    3,4
+                                                </div>
+                                            </td>
+                                            <td>
+                                                <div
+                                                    class="matrix-cell cell-low"
+                                                >
+                                                    2,4
+                                                </div>
+                                            </td>
+                                            <td>
+                                                <div
+                                                    class="matrix-cell cell-low"
+                                                >
+                                                    2,3
+                                                </div>
+                                            </td>
+                                            <td>
+                                                <div
+                                                    class="matrix-cell cell-low"
+                                                >
+                                                    2,0
+                                                </div>
+                                            </td>
+                                            <td>
+                                                <div
+                                                    class="matrix-cell cell-low"
+                                                >
+                                                    2,2
+                                                </div>
+                                            </td>
+                                            <td>
+                                                <div
+                                                    class="matrix-cell cell-low"
+                                                >
+                                                    2,5
+                                                </div>
+                                            </td>
+                                            <td>
+                                                <div
+                                                    class="matrix-cell cell-warning"
+                                                >
+                                                    3,1
+                                                </div>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+
+                            <!-- Legenda Warna -->
+                            <div class="matrix-legend">
+                                <div class="legend-item">
+                                    <span class="legend-dot dot-low"></span> 2,5
+                                    atau kurang: risiko rendah
+                                </div>
+                                <div class="legend-item">
+                                    <span class="legend-dot dot-warning"></span>
+                                    sampai 3,5: waspada
+                                </div>
+                                <div class="legend-item">
+                                    <span class="legend-dot dot-danger"></span>
+                                    di atas 3,5: perlu perhatian
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- KOLOM KANAN: Dari mana skor beban kerja berasal -->
+                        <div class="stat-card">
+                            <h3 class="section-title">
+                                Dari mana skor beban kerja berasal?
+                            </h3>
+                            <p class="section-subtitle">
+                                Poin kontribusi tiap dimensi (rating × bobot /
+                                15), dirata-ratakan seluruh responden. Keenamnya
+                                berjumlah tepat 64,1, sama dengan kartu
+                                rata-rata di atas.
+                            </p>
+
+                            <div class="breakdown-list">
+                                <!-- Item 1 -->
+                                <div class="breakdown-item">
+                                    <div class="breakdown-info">
+                                        <span class="bd-title"
+                                            >Tuntutan Waktu</span
+                                        >
+                                        <span class="bd-desc"
+                                            >rating 74, bobot 4,4</span
+                                        >
+                                    </div>
+                                    <div class="breakdown-bar-area">
+                                        <div class="custom-progress-bar">
+                                            <div
+                                                class="progress-fill"
+                                                style="width: 88%"
+                                            ></div>
+                                        </div>
+                                    </div>
+                                    <div class="breakdown-score">
+                                        <strong>22,3</strong>
+                                        <span class="bd-pct">35% skor</span>
+                                    </div>
+                                </div>
+
+                                <!-- Item 2 -->
+                                <div class="breakdown-item">
+                                    <div class="breakdown-info">
+                                        <span class="bd-title"
+                                            >Tuntutan Mental</span
+                                        >
+                                        <span class="bd-desc"
+                                            >rating 68, bobot 3,8</span
+                                        >
+                                    </div>
+                                    <div class="breakdown-bar-area">
+                                        <div class="custom-progress-bar">
+                                            <div
+                                                class="progress-fill"
+                                                style="width: 70%"
+                                            ></div>
+                                        </div>
+                                    </div>
+                                    <div class="breakdown-score">
+                                        <strong>17,6</strong>
+                                        <span class="bd-pct">27% skor</span>
+                                    </div>
+                                </div>
+
+                                <!-- Item 3 -->
+                                <div class="breakdown-item">
+                                    <div class="breakdown-info">
+                                        <span class="bd-title">Usaha</span>
+                                        <span class="bd-desc"
+                                            >rating 62, bobot 2,9</span
+                                        >
+                                    </div>
+                                    <div class="breakdown-bar-area">
+                                        <div class="custom-progress-bar">
+                                            <div
+                                                class="progress-fill"
+                                                style="width: 50%"
+                                            ></div>
+                                        </div>
+                                    </div>
+                                    <div class="breakdown-score">
+                                        <strong>12,4</strong>
+                                        <span class="bd-pct">19% skor</span>
+                                    </div>
+                                </div>
+
+                                <!-- Item 4 -->
+                                <div class="breakdown-item">
+                                    <div class="breakdown-info">
+                                        <span class="bd-title">Performa</span>
+                                        <span class="bd-desc"
+                                            >rating 45, bobot 2,2</span
+                                        >
+                                    </div>
+                                    <div class="breakdown-bar-area">
+                                        <div class="custom-progress-bar">
+                                            <div
+                                                class="progress-fill"
+                                                style="width: 28%"
+                                            ></div>
+                                        </div>
+                                    </div>
+                                    <div class="breakdown-score">
+                                        <strong>6,8</strong>
+                                        <span class="bd-pct">11% skor</span>
+                                    </div>
+                                </div>
+
+                                <!-- Item 5 -->
+                                <div class="breakdown-item">
+                                    <div class="breakdown-info">
+                                        <span class="bd-title">Frustrasi</span>
+                                        <span class="bd-desc"
+                                            >rating 52, bobot 0,8</span
+                                        >
+                                    </div>
+                                    <div class="breakdown-bar-area">
+                                        <div class="custom-progress-bar">
+                                            <div
+                                                class="progress-fill"
+                                                style="width: 15%"
+                                            ></div>
+                                        </div>
+                                    </div>
+                                    <div class="breakdown-score">
+                                        <strong>3,0</strong>
+                                        <span class="bd-pct">5% skor</span>
+                                    </div>
+                                </div>
+
+                                <!-- Item 6 -->
+                                <div class="breakdown-item">
+                                    <div class="breakdown-info">
+                                        <span class="bd-title"
+                                            >Tuntutan Fisik</span
+                                        >
+                                        <span class="bd-desc"
+                                            >rating 34, bobot 0,9</span
+                                        >
+                                    </div>
+                                    <div class="breakdown-bar-area">
+                                        <div class="custom-progress-bar">
+                                            <div
+                                                class="progress-fill"
+                                                style="width: 10%"
+                                            ></div>
+                                        </div>
+                                    </div>
+                                    <div class="breakdown-score">
+                                        <strong>2,0</strong>
+                                        <span class="bd-pct">3% skor</span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Kotak Info Cara Membaca -->
+                            <div class="reading-guide-box">
+                                <h5 class="guide-title">Cara membaca</h5>
+                                <p class="guide-text">
+                                    Dimensi dengan poin terbesar adalah yang
+                                    paling mendorong skor, karena ratingnya
+                                    tinggi dan sering dipilih sebagai paling
+                                    berpengaruh.
+                                </p>
+                                <p class="guide-text">
+                                    Rating tinggi dengan bobot kecil
+                                    kontribusinya kecil. Jadi rating tinggi saja
+                                    belum tentu penyebab utama.
+                                </p>
+                                <p class="guide-text mb-0">
+                                    Performa: 0 berarti sangat baik, 100 sangat
+                                    buruk. Diurutkan dari poin terbesar. Angka
+                                    ini contoh.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="inner-content-tabel">
+                        <h4>Data Karyawan</h4>
+                        <div class="table-responsive table-card">
+                            <table class="table table-striped-columns">
+                                <thead class="">
+                                    <th
+                                        scope="col"
+                                        class="text-center align-middle"
+                                        style="width: 10%"
+                                    >
+                                        #
+                                    </th>
+                                    <th
+                                        scope="col"
+                                        class="text-center align-middle"
+                                        style="width: 40%"
+                                    >
+                                        Nama
+                                    </th>
+                                    <th
+                                        scope="col"
+                                        class="text-center align-middle"
+                                        style="width: 25%"
+                                    >
+                                        Divisi
+                                    </th>
+                                    <th
+                                        scope="col"
+                                        class="text-center align-middle"
+                                        style="width: 25%"
+                                    >
+                                        Jumlah tugas
+                                    </th>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <th
+                                            scope="col"
+                                            class="text-center align-middle"
+                                        >
+                                            1
+                                        </th>
+                                        <td class="text-center align-middle">
+                                            Jale
+                                        </td>
+                                        <td class="text-center align-middle">
+                                            IT
+                                        </td>
+                                        <td class="text-center align-middle">
+                                            5/10
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <th
+                                            scope="col"
+                                            class="text-center align-middle"
+                                        >
+                                            2
+                                        </th>
+                                        <td class="text-center align-middle">
+                                            Firdaus
+                                        </td>
+                                        <td class="text-center align-middle">
+                                            IT
+                                        </td>
+                                        <td class="text-center align-middle">
+                                            3/10
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <th
+                                            scope="col"
+                                            class="text-center align-middle"
+                                        >
+                                            3
+                                        </th>
+                                        <td
+                                            class="text-center align-middle"
+                                        ></td>
+                                        <td
+                                            class="text-center align-middle"
+                                        ></td>
+                                        <td
+                                            class="text-center align-middle"
+                                        ></td>
+                                    </tr>
+                                    <tr>
+                                        <th
+                                            scope="col"
+                                            class="text-center align-middle"
+                                        >
+                                            4
+                                        </th>
+                                        <td
+                                            class="text-center align-middle"
+                                        ></td>
+                                        <td
+                                            class="text-center align-middle"
+                                        ></td>
+                                        <td
+                                            class="text-center align-middle"
+                                        ></td>
+                                    </tr>
+                                    <tr>
+                                        <th
+                                            scope="col"
+                                            class="text-center align-middle"
+                                        >
+                                            5
+                                        </th>
+                                        <td
+                                            class="text-center align-middle"
+                                        ></td>
+                                        <td
+                                            class="text-center align-middle"
+                                        ></td>
+                                        <td
+                                            class="text-center align-middle"
+                                        ></td>
+                                    </tr>
+                                    <tr>
+                                        <th
+                                            scope="col"
+                                            class="text-center align-middle"
+                                        >
+                                            6
+                                        </th>
+                                        <td
+                                            class="text-center align-middle"
+                                        ></td>
+                                        <td
+                                            class="text-center align-middle"
+                                        ></td>
+                                        <td
+                                            class="text-center align-middle"
+                                        ></td>
+                                    </tr>
+                                    <tr>
+                                        <th
+                                            scope="col"
+                                            class="text-center align-middle"
+                                        >
+                                            7
+                                        </th>
+                                        <td
+                                            class="text-center align-middle"
+                                        ></td>
+                                        <td
+                                            class="text-center align-middle"
+                                        ></td>
+                                        <td
+                                            class="text-center align-middle"
+                                        ></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </main>
+            </div>
+        </div>
+
+        <!-- JavaScript untuk Toggle Menu -->
+        <script src="../../JavaScript/eksternal.js" defer></script>
+        <script
+            type="module"
+            src="https://cdn.jsdelivr.net/npm/bootstrap@6.0.0-alpha.1/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-1a/pXj49ZQ1aHEmrJ+gMw1otqoVsYwlEnlD8mIfY2TV03r20Y0CN7uqx1tQogjPL"
+            crossorigin="anonymous"
+        ></script>
+    <script src="../../JavaScript/integrasi-api.js"></script>
+</body>
+</html>

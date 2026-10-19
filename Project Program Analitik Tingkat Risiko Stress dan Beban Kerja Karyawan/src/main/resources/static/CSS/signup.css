@@ -1,0 +1,180 @@
+/* Reset dasar */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Montserrat', sans-serif;
+}
+
+/* Background */
+body {
+    background-image: url(../property/bg\ branding.svg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+}
+
+/* Kotak Form Putih */
+.form-container {
+    background: #ffffff;
+    width: 100%;
+    max-width: 420px;
+    padding: 15px 30px;
+    border-radius: 6px;
+    box-shadow: 0 15px 35px rgba(0, 10, 30, 0.3);
+    position: relative;
+}
+
+.form-header {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 10px;
+}
+
+/* Judul Form */
+.form-title {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+    text-align: center;
+    font-size: 26px;
+    margin-bottom: 0px;
+    color: #002855;
+    letter-spacing: 0.5px;
+}
+
+.form-title span {
+    color: #004bb7;
+}
+
+/* Tombol Close (X) di pojok kanan atas */
+.close-btn {
+    position: absolute;
+    top: 50%;
+    right: 0px;
+    transform: translateY(-50%);
+    font-size: 24px;
+    color: #004bb7;
+    font-weight: bold;
+    text-decoration: none;
+    line-height: 1;
+    cursor: pointer;
+    transition: color 0.2s ease;
+}
+
+/* Grup Input */
+
+/* Titik kecil di samping kiri input */
+
+/* Gaya Input & Dropdown */
+
+/* Gaya placeholder dropdown */
+
+/* Panah Dropdown */
+
+/* Ikon Mata Password */
+
+/* Checkbox */
+.checkbox-group {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.checkbox-group input {
+    margin-top: 3px;
+    cursor: pointer;
+    accent-color: #002855;
+}
+
+.checkbox-group label {
+    font-size: 9px;
+    color: #666666;
+    line-height: 1.4;
+}
+
+/* Tombol Submit */
+.submit-btn {
+    width: 100%;
+    padding: 15px;
+    background-color: #004bb7;
+    border: none;
+    color: #ffffff;
+    font-size: 13px;
+    font-weight: 600;
+    letter-spacing: 2px;
+    cursor: pointer;
+    border-radius: 2px;
+    transition: background 0.3s ease;
+}
+
+.submit-btn:hover {
+    background-color: #002855;
+}
+
+/* Teks Footer */
+.footer-text {
+    text-align: center;
+    margin-top: 10px;
+    font-size: 11px;
+    color: #555555;
+}
+
+.footer-text a {
+    color: #004bb7;
+    text-decoration: none;
+    font-weight: 700;
+}
+
+.footer-text a:hover {
+    text-decoration: underline;
+}
+
+/*MEDIA QUERIES (RESPONSIF SIZES)*/
+
+@media (max-width: 480px) {
+    .form-container {
+        padding: 30px 20px;
+    }
+
+    .close-btn {
+        top: 15px;
+        right: 15px;
+        font-size: 20px;
+    }
+
+    .form-title {
+        font-size: 21px;
+        margin-bottom: 25px;
+    }
+
+    .checkbox-group {
+        margin-top: 20px;
+        margin-bottom: 20px;
+    }
+
+    .checkbox-group label {
+        font-size: 10px;
+    }
+
+    .submit-btn {
+        padding: 12px;
+        font-size: 12px;
+    }
+}
+
+@media (max-height: 650px) {
+    body {
+        align-items: flex-start;
+        padding-top: 30px;
+        padding-bottom: 30px;
+    }
+}

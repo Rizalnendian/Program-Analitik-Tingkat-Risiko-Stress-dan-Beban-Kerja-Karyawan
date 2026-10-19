@@ -1,0 +1,152 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.content {
+    min-height: 100%;
+}
+
+.font {
+    font-family: 'Montserrat', sans-serif;
+    font-optical-sizing: auto;
+}
+
+.deskripsi,
+.nama {
+    font-weight: 500;
+    text-shadow: 3px 3px 5px black;
+}
+
+.nama {
+    font-family: 'Bodoni Moda', serif;
+    font-optical-sizing: auto;
+}
+
+/* Left side */
+.branding {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background-image: url(../property/bg\ branding.svg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    color: aliceblue;
+    padding: 20px;
+    margin: 0px;
+    width: 60%;
+    /* flex: 1; */
+    min-height: 100vh;
+}
+
+/* Right side */
+.login-form {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    width: 40%;
+    margin: 0px;
+    min-height: 100vh;
+    /* flex: 1; */
+}
+
+.title {
+    margin-bottom: 75px;
+}
+
+.container-login,
+.container-branding {
+    padding-left: 100px;
+    padding-right: 100px;
+}
+
+.submit-btn {
+    width: 100%;
+    padding: 15px;
+    background: #004bb7;
+    border: none;
+    color: #ffffff;
+    font-size: 13px;
+    font-weight: 600;
+    letter-spacing: 2px;
+    cursor: pointer;
+    border-radius: 6px;
+    transition: background 0.3s ease;
+}
+
+.submit-btn:hover {
+    background-color: #002855;
+}
+
+a.sign-up {
+    color: #004bb7;
+    font-weight: bold;
+}
+
+a.sign-up :hover {
+    color: #002855;
+    font-weight: bold;
+}
+.col-6 {
+    width: 50%;
+}
+.col-12 {
+    width: 100%;
+}
+
+[class*='col'] {
+    float: left;
+    padding: 10px;
+}
+
+@media only screen and (max-width: 1032px) {
+    [class*='col'] {
+        width: 100%;
+    }
+
+    .branding {
+        min-height: 1%;
+        padding: 10px;
+    }
+
+    .container-branding {
+        padding: 20px 100px;
+    }
+
+    .login-form {
+        min-height: 700px;
+    }
+
+    .title {
+        margin-bottom: 50px;
+    }
+}
+
+@media only screen and (max-width: 450px) {
+    [class*='col'] {
+        width: 100%;
+    }
+
+    .branding {
+        min-height: 200px;
+    }
+
+    .container-branding {
+        padding: 0px 40px;
+        min-height: 100px;
+    }
+
+    .login-form {
+        min-height: 500px;
+        /* padding: 0px 40px; */
+    }
+
+    .container-login {
+        padding: 0px 40px;
+    }
+
+    .title {
+        margin-bottom: 0px;
+    }
+}

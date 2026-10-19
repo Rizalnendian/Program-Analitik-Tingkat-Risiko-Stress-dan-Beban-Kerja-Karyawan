@@ -1,0 +1,320 @@
+/* margin */
+body,
+html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    box-sizing: border-box;
+    font-family: 'Montserrat', sans-serif;
+}
+
+/* Container full */
+.app-layout {
+    display: flex;
+    height: 100vh;
+    width: 100vw;
+    overflow: hidden;
+    position: relative;
+}
+
+/* Navbar samping */
+.sidebar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    width: 250px;
+    flex-shrink: 0;
+    background-color: #002855;
+    color: white;
+    transition: transform 0.3s ease;
+    z-index: 1000;
+    display: flex;
+    flex-direction: column;
+    transform: translateX(-100%);
+}
+
+.sidebar-logo {
+    padding: 24px 20px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    position: relative;
+}
+
+.sidebar-logo .logo-icon {
+    width: 40px;
+    height: 40px;
+    background-color: #004bb7;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.2rem;
+    flex-shrink: 0;
+    color: #ffffff;
+}
+
+.sidebar-logo .logo-text .app-name {
+    color: #ffffff;
+    font-weight: 700;
+    font-size: 14px;
+    display: block;
+}
+
+.sidebar-logo .logo-text .app-sub {
+    color: rgba(255, 255, 255, 0.45);
+    font-size: 11px;
+    display: block;
+}
+
+/* Tombol tutup di mobile*/
+.sidebar-close-btn {
+    display: block;
+    border: none;
+    background: none;
+    color: #ffffff;
+    font-size: 1.2rem;
+    margin-left: auto;
+    cursor: pointer;
+}
+/* Tombol buka di mobile*/
+.sidebar.open {
+    transform: translateX(0);
+}
+
+.sidebar-user {
+    padding: 16px 20px;
+    background: rgba(255, 255, 255, 0.04);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.sidebar-user .user-avatar {
+    width: 36px;
+    height: 36px;
+    background-color: #004bb7;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1rem;
+    margin-bottom: 8px;
+    font-weight: 700;
+    color: #ffffff;
+}
+
+.sidebar-user .user-name {
+    color: #ffffff;
+    font-size: 13px;
+    font-weight: 600;
+}
+.sidebar-user .user-role {
+    color: rgba(255, 255, 255, 0.45);
+    font-size: 11px;
+}
+
+/* Navbar menu */
+.sidebar-nav {
+    flex: 1;
+    padding: 16px 12px;
+}
+.nav-label {
+    font-size: 10px;
+    font-weight: 700;
+    color: rgba(255, 255, 255, 0.3);
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    padding: 12px 8px 6px;
+}
+
+.nav-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 10px 12px;
+    border-radius: 8px;
+    color: rgba(255, 255, 255, 0.65);
+    font-size: 13.5px;
+    font-weight: 500;
+    transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+    cursor: pointer;
+    margin-bottom: 2px;
+}
+
+.nav-item:hover {
+    background: rgba(255, 255, 255, 0.08);
+    color: #ffffff;
+}
+.nav-item.active {
+    background: #004bb7;
+    color: #ffffff;
+}
+.nav-item .nav-icon {
+    font-size: 16px;
+    width: 20px;
+    flex-shrink: 0;
+}
+
+/* .sidebar-footer {
+    padding: 16px 12px;
+    border-top: 1px solid rgba(255,255,255,.06);
+} */
+
+.sidebar-footer .btn {
+    background-color: transparent; /* Menghilangkan background putih bawaan browser */
+    padding: 10px 12px;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+/* Efek hover pada tombol */
+.sidebar-footer .btn:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+/* Memperbaiki teks link agar mengikuti pengaturan warna tombol */
+.sidebar-footer .btn a {
+    color: inherit; /* Teks mengambil warna dari elemen parent (<button>) */
+    text-decoration: none; /* Menghilangkan garis bawah biru bawaan browser */
+}
+
+/* Konten utama dan topbar */
+.right-panel {
+    /* margin-left: 240px; */
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    background-color: #f8f9fa;
+    min-height: 100vh;
+    width: 100%; /* Memastikan tidak ada sisa ruang */
+    transition: margin-left 0.3s ease;
+}
+
+.top-bar {
+    height: 60px;
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 30px;
+    background-color: #ffffff;
+    border-bottom: 1px solid #e0e0e0;
+    gap: 12px;
+}
+
+.topbar-left {
+    display: flex;
+    align-items: center;
+    gap: 15px; /* Jarak antara tombol dan teks "Dashboard" */
+    min-width: 0;
+}
+
+.topbar-left h2 {
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: #040914;
+    margin: 0;
+    white-space: nowrap;
+}
+
+.topbar-right {
+    display: flex;
+    align-items: center;
+}
+
+.topbar-time {
+    font-size: 0.9rem;
+    color: #555;
+    white-space: nowrap;
+}
+
+/* Hide tombol menu hamburger di layar PC/Laptop */
+.mobile-toggle-btn {
+    display: block;
+    background: none;
+    border: none;
+    font-size: 24px;
+    cursor: pointer;
+    color: #333;
+    line-height: 1;
+}
+
+/* Overlay mobile */
+.sidebar-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(4, 9, 20, 0.5);
+    z-index: 999;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease;
+}
+
+.sidebar-overlay.active {
+    opacity: 1;
+    visibility: visible;
+}
+
+/* 3. Container konten */
+.content-container {
+    flex: 1;
+    padding: 24px;
+    overflow-y: auto;
+}
+
+.inner-content {
+    background-color: #ffffff;
+    min-height: 200px;
+    border-radius: 12px;
+    margin-bottom: 20px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+}
+
+/* Setting responsive */
+
+@media (max-width: 768px) {
+    .top-bar {
+        padding: 0 15px;
+        gap: 10px;
+    }
+
+    .right-panel {
+        margin-left: 0;
+    }
+
+    .content-container {
+        padding: 15px;
+    }
+
+    .top-bar h2 {
+        font-size: 18px;
+    }
+
+    .sidebar-close-btn {
+        display: block;
+    }
+}
+
+@media (max-width: 480px) {
+
+    .topbar-left {
+        gap: 8px;
+    }
+
+    .topbar-left h2 {
+        font-size: 0.75rem;
+    }
+
+    .topbar-time {
+        font-size: 0.75rem;
+    }
+
+    .mobile-toggle-btn {
+        font-size: 20px;
+    }
+}
